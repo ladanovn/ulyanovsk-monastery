@@ -1,0 +1,59 @@
+body {
+  margin: 0px; }
+  body .cover {
+    position: relative;
+    background: #f7d04e;
+    overflow: hidden; }
+    body .cover .background__vert-pattern {
+      position: absolute;
+      opacity: 0.439; }
+    body .cover .background__circle-pattern, body .cover .background__text-pattern, body .cover .background__trees {
+      position: absolute; }
+    body .cover .background__circle-pattern {
+      animation: spin 15s linear infinite; }
+    body .cover .peacock__paws, body .cover .peacock__tail, body .cover .peacock__body {
+      position: absolute; }
+    body .cover .peacock__tail {
+      animation: peacock-wag 1s linear infinite;
+      transform-origin: 100% 0; }
+    body .cover .monastery__photo {
+      position: absolute; }
+    body .cover .title__name, body .cover .title__wind-bird-1, body .cover .title__body-bird-1, body .cover .title__head-bird-2, body .cover .title__body-bird-2 {
+      position: absolute; }
+    body .cover .title__wind-bird-1 {
+      animation: title-bird-wag 1.5s linear infinite;
+      transform-origin: 100% 0; }
+    body .cover .title__head-bird-2 {
+      animation: title-bird-nodding 2s linear infinite;
+      transform-origin: 0 50%; }
+    body .cover .nav__map, body .cover .nav__history, body .cover .nav__galary, body .cover .nav__about {
+      position: absolute;
+      cursor: pointer; }
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg); } }
+
+@keyframes peacock-wag {
+  0% {
+    transform: rotate(3deg); }
+  50% {
+    transform: rotate(10deg); }
+  100% {
+    transform: rotate(3deg); } }
+
+@keyframes title-bird-wag {
+  0% {
+    transform: rotate(-2deg); }
+  50% {
+    transform: rotate(15deg); }
+  100% {
+    transform: rotate(-2deg); } }
+
+@keyframes title-bird-nodding {
+  0% {
+    transform: rotate(0deg); }
+  50% {
+    transform: rotate(10deg); }
+  100% {
+    transform: rotate(0deg); } }
