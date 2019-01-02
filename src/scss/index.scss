@@ -1,11 +1,28 @@
 body {
     margin: 0px;
 
-    .cover {
+    .view {
         position: relative;
         background: #f7d04e;
         overflow: hidden;
         
+        &__loader {
+            position: absolute;
+            border: 16px solid #f7f7f7;
+            border-top: 16px solid #545188;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 1s linear infinite;
+            transition: .3s;
+            opacity: 0;
+        }
+
+        &__cover {
+            transition: .3s;
+            opacity: 0;
+        }
+
         .background {
             &__vert-pattern {
                 position: absolute;

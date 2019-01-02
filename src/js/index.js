@@ -1,4 +1,6 @@
   document.addEventListener("DOMContentLoaded", function(event){
+    const view = document.getElementsByClassName('view')[0];
+    const loader = document.getElementsByClassName('loader')[0];
     const cover = document.getElementsByClassName('cover')[0];
     const vertPattern = document.getElementsByClassName('background__vert-pattern')[0];
     const circlePattern = document.getElementsByClassName('background__circle-pattern')[0];
@@ -18,10 +20,6 @@
     const navGalary = document.getElementsByClassName('nav__galary')[0];
     const navAbout = document.getElementsByClassName('nav__about')[0];
 
-    imagesLoaded(cover, ()=>{
-        console.log('All loaded')
-    })
-
     let window_height;
     let window_width;
 
@@ -34,7 +32,8 @@
     resize();
 
     function resize() {
-        coverSize();
+        viewSize();
+        loaderSize();
         vertPatternSize();
         textPatternSize();
         circlePatternSize();
@@ -54,7 +53,7 @@
         navAboutSize();
     }
 
-    function coverSize() {
+    function viewSize() {
         const basic_height = 915;
         const basic_width = 1680;
         
@@ -72,10 +71,22 @@
         coef_height = cover_height / basic_height;
         coef_width = cover_width / basic_width;
 
-        cover.style.width = `${cover_width}px`;
-        cover.style.height = `${cover_height}px`;
-        cover.style.top = `${(window_height-cover_height)/2}px`;
-        cover.style.left = `${(window_width-cover_width)/2}px`;
+        view.style.width = `${cover_width}px`;
+        view.style.height = `${cover_height}px`;
+        view.style.top = `${(window_height-cover_height)/2}px`;
+        view.style.left = `${(window_width-cover_width)/2}px`;
+    }
+
+    function loaderSize() {
+        const basic_top = 320;
+        const basic_left = 750;
+        const basic_height = 150;
+        const basic_width = 150;
+
+        loader.style.width = `${basic_width * coef_width}px`;
+        loader.style.height = `${basic_height * coef_height}px`;
+        loader.style.top = `${basic_top * coef_height}px`;
+        loader.style.left = `${basic_left * coef_width}px`;
     }
 
     function vertPatternSize() {
@@ -281,7 +292,12 @@
         navAbout.style.top = `${basic_top * coef_height}px`;
         navAbout.style.left = `${basic_left * coef_width}px`;
     }
-      
+    
+    imagesLoaded(view, ()=>{
+        cover.style.opacity = 1;
+        loader.style.opacity = 0
+    });
+
     window.onresize = function() {
         resize();
     };

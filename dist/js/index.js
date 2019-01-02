@@ -1,6 +1,8 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", function (event) {
+  var view = document.getElementsByClassName('view')[0];
+  var loader = document.getElementsByClassName('loader')[0];
   var cover = document.getElementsByClassName('cover')[0];
   var vertPattern = document.getElementsByClassName('background__vert-pattern')[0];
   var circlePattern = document.getElementsByClassName('background__circle-pattern')[0];
@@ -19,9 +21,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   var navHistory = document.getElementsByClassName('nav__history')[0];
   var navGalary = document.getElementsByClassName('nav__galary')[0];
   var navAbout = document.getElementsByClassName('nav__about')[0];
-  imagesLoaded(cover, function () {
-    console.log('All loaded');
-  });
   var window_height;
   var window_width;
   var cover_height;
@@ -31,7 +30,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
   resize();
 
   function resize() {
-    coverSize();
+    viewSize();
+    loaderSize();
     vertPatternSize();
     textPatternSize();
     circlePatternSize();
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     navAboutSize();
   }
 
-  function coverSize() {
+  function viewSize() {
     var basic_height = 915;
     var basic_width = 1680;
     window_height = window.innerHeight;
@@ -67,10 +67,21 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     coef_height = cover_height / basic_height;
     coef_width = cover_width / basic_width;
-    cover.style.width = "".concat(cover_width, "px");
-    cover.style.height = "".concat(cover_height, "px");
-    cover.style.top = "".concat((window_height - cover_height) / 2, "px");
-    cover.style.left = "".concat((window_width - cover_width) / 2, "px");
+    view.style.width = "".concat(cover_width, "px");
+    view.style.height = "".concat(cover_height, "px");
+    view.style.top = "".concat((window_height - cover_height) / 2, "px");
+    view.style.left = "".concat((window_width - cover_width) / 2, "px");
+  }
+
+  function loaderSize() {
+    var basic_top = 320;
+    var basic_left = 750;
+    var basic_height = 150;
+    var basic_width = 150;
+    loader.style.width = "".concat(basic_width * coef_width, "px");
+    loader.style.height = "".concat(basic_height * coef_height, "px");
+    loader.style.top = "".concat(basic_top * coef_height, "px");
+    loader.style.left = "".concat(basic_left * coef_width, "px");
   }
 
   function vertPatternSize() {
@@ -259,6 +270,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
     navAbout.style.top = "".concat(basic_top * coef_height, "px");
     navAbout.style.left = "".concat(basic_left * coef_width, "px");
   }
+
+  imagesLoaded(view, function () {
+    cover.style.opacity = 1;
+    loader.style.opacity = 0;
+  });
 
   window.onresize = function () {
     resize();
