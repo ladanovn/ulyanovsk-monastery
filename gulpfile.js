@@ -7,6 +7,7 @@ const autoprefixer = require("autoprefixer");
 const babel = require('gulp-babel');
 const rename = require("gulp-rename");
 const imagemin = require("gulp-imagemin");
+const imageminPngquant = require('imagemin-pngquant');
 
 function browserSync(done) {
     browsersync.init({
@@ -57,7 +58,10 @@ function img(){
       imagemin([
         imagemin.gifsicle({ interlaced: true }),
         imagemin.jpegtran({ progressive: true }),
-        imagemin.optipng({ optimizationLevel: 7 }),
+        imagemin.optipng({ optimizationLevel: 5 }),
+        imageminPngquant({
+          quality: '70-90'
+        }),
         imagemin.svgo({
           plugins: [
             {

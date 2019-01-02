@@ -1,4 +1,4 @@
- document.addEventListener("DOMContentLoaded", function(event){
+  document.addEventListener("DOMContentLoaded", function(event){
     const cover = document.getElementsByClassName('cover')[0];
     const vertPattern = document.getElementsByClassName('background__vert-pattern')[0];
     const circlePattern = document.getElementsByClassName('background__circle-pattern')[0];
@@ -17,6 +17,10 @@
     const navHistory = document.getElementsByClassName('nav__history')[0];
     const navGalary = document.getElementsByClassName('nav__galary')[0];
     const navAbout = document.getElementsByClassName('nav__about')[0];
+
+    imagesLoaded(cover, ()=>{
+        console.log('All loaded')
+    })
 
     let window_height;
     let window_width;

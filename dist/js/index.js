@@ -19,6 +19,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
   var navHistory = document.getElementsByClassName('nav__history')[0];
   var navGalary = document.getElementsByClassName('nav__galary')[0];
   var navAbout = document.getElementsByClassName('nav__about')[0];
+  imagesLoaded(cover, function () {
+    console.log('All loaded');
+  });
   var window_height;
   var window_width;
   var cover_height;
