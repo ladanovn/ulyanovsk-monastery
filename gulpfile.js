@@ -6,6 +6,7 @@ const cssnano = require("cssnano");
 const autoprefixer = require("autoprefixer");
 const babel = require('gulp-babel');
 const rename = require("gulp-rename");
+const imagemin = require("gulp-imagemin");
 
 function browserSync(done) {
     browsersync.init({
@@ -26,9 +27,9 @@ function css() {
     return gulp
       .src("./src/scss/**/*.scss")
       .pipe(sass())
-      .pipe(gulp.dest("./dist/css/"))
       .pipe(rename({ suffix: ".min" }))
       .pipe(postcss([autoprefixer(), cssnano()]))
+      .pipe(gulp.dest("./dist/css/"))
       .pipe(browsersync.stream());
 }
 
@@ -51,7 +52,22 @@ function fonts(){
 
 function img(){
   return gulp
-    .src('./src/img/**/*.png')
+    .src('./src/img/**/*')
+    .pipe(
+      imagemin([
+        imagemin.gifsicle({ interlaced: true }),
+        imagemin.jpegtran({ progressive: true }),
+        imagemin.optipng({ optimizationLevel: 7 }),
+        imagemin.svgo({
+          plugins: [
+            {
+              removeViewBox: false,
+              collapseGroups: true
+            }
+          ]
+        })
+      ])
+    )
     .pipe(gulp.dest('./dist/img'))
     .pipe(browsersync.stream());
 }
