@@ -8,6 +8,23 @@ body {
         overflow: hidden;
         box-shadow: 0 0 100px 10px #0d0d0dde;    
 
+        &__loader {
+            position: absolute;
+            border: 16px solid #f7f7f7;
+            border-top: 16px solid #545188;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 1s linear infinite;
+            transition: .3s;
+            opacity: 0;
+        }
+
+        &__cover {
+            transition: .3s;
+            opacity: 0;
+        }
+        
         .background {
             &__vert-pattern,
             &__cloud, 

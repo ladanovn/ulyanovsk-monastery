@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(event){
     const view = document.getElementsByClassName('view')[0];
     const loader = document.getElementsByClassName('loader')[0];
+    const cover = document.getElementsByClassName('cover')[0];
     const vertPattern = document.getElementsByClassName('background__vert-pattern')[0];
     const cloud = document.getElementsByClassName('background__cloud')[0];
     const forest = document.getElementsByClassName('background__forest')[0];
@@ -224,6 +225,8 @@ document.addEventListener("DOMContentLoaded", function(event){
     }  
       
     imagesLoaded(view, ()=>{
+        cover.style.opacity = 1;
+        loader.style.opacity = 0
     });
 
     window.onresize = function() {
