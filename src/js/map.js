@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     const forest = document.getElementsByClassName('background__forest')[0];
     const mapMonastery = document.getElementsByClassName('monastery__map')[0];
     const navBack = document.getElementsByClassName('nav__back')[0];
-    const mapMagnifier = document.getElementsByClassName('nav__magnifier')[0];
+    const navMagnifier = document.getElementsByClassName('nav__magnifier')[0];
     const decorCow = document.getElementsByClassName('decoration__cow')[0];
     const decorFishmens = document.getElementsByClassName('decoration__fishermen')[0];
     const decorMonarchs = document.getElementsByClassName('decoration__monarchs')[0];
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function(event){
         forestSize();
         mapMonasterySize();
         navBackSize();
-        mapMagnifierSize();
+        navMagnifierSize();
         decorCowSize();
         decorFishmensSize();
         decorMonarchsSize();
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     }
 
     function viewSize() {
-        const basic_height = 1158;
+        const basic_height = 1158 - 243;
         const basic_width = 1680;
         
         window_height = window.innerHeight;
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function(event){
 
       
     function loaderSize() {
-        const basic_top = 430;
+        const basic_top = 430 - 243;
         const basic_left = 750;
         const basic_height = 150;
         const basic_width = 150;
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     }
       
     function vertPatternSize() {
-        const basic_top = -5;
+        const basic_top = -5 - 243;
         const basic_left = 245;
         const basic_height = 916;
         const basic_width = 258;
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     }
 
     function cloudSize() {
-        const basic_top = 142;
+        const basic_top = 142 - 243;
         const basic_left = 77;
         const basic_height = 738;
         const basic_width = 1119;
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     }
 
     function forestSize() {
-        const basic_top = 418;
+        const basic_top = 418 - 243;
         const basic_left = 58;
         const basic_height = 448;
         const basic_width = 1521;
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     }
     
     function mapMonasterySize() {
-        const basic_top = 271;
+        const basic_top = 271 - 243;
         const basic_left = 0;
         const basic_height = 887;
         const basic_width = 1652;
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     }    
 
     function navBackSize() {
-        const basic_top = 45;
+        const basic_top = 45 ;
         const basic_left = 330;
         const basic_height = 75;
         const basic_width = 82;
@@ -140,20 +140,20 @@ document.addEventListener("DOMContentLoaded", function(event){
         navBack.style.left = `${basic_left * coef_width}px`;
     }  
       
-    function mapMagnifierSize() {
-        const basic_top = 143;
+    function navMagnifierSize() {
+        const basic_top = 143 ;
         const basic_left = 335;
         const basic_height = 96;
         const basic_width = 74;
 
-        mapMagnifier.style.width = `${basic_width * coef_width}px`;
-        mapMagnifier.style.height = `${basic_height * coef_height}px`;
-        mapMagnifier.style.top = `${basic_top * coef_height}px`;
-        mapMagnifier.style.left = `${basic_left * coef_width}px`;
+        navMagnifier.style.width = `${basic_width * coef_width}px`;
+        navMagnifier.style.height = `${basic_height * coef_height}px`;
+        navMagnifier.style.top = `${basic_top * coef_height}px`;
+        navMagnifier.style.left = `${basic_left * coef_width}px`;
     }  
 
     function decorCowSize() {
-        const basic_top = 573;
+        const basic_top = 573 - 243;
         const basic_left = 1169;
         const basic_height = 62;
         const basic_width = 154;
@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     }        
 
     function decorFishmensSize() {
-        const basic_top = 973;
+        const basic_top = 973 - 243;
         const basic_left = 608;
         const basic_height = 66;
         const basic_width = 127;
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     }  
 
     function decorMonarchsSize() {
-        const basic_top = 799;
+        const basic_top = 799 - 243;
         const basic_left = 799;
         const basic_height = 120;
         const basic_width = 88;
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     }  
       
     function decorPahariSize() {
-        const basic_top = 821;
+        const basic_top = 821 - 243;
         const basic_left = 319;
         const basic_height = 75;
         const basic_width = 224;
@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     }     
 
     function decorShipSize() {
-        const basic_top = 984;
+        const basic_top = 984 - 243;
         const basic_left = 1154;
         const basic_height = 140;
         const basic_width = 309;
@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     }  
 
     function decorShipMonarchsSize() {
-        const basic_top = 1005;
+        const basic_top = 1005 - 243;
         const basic_left = 1167;
         const basic_height = 57;
         const basic_width = 132;
