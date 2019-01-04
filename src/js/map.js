@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function(event){
 
       
     function loaderSize() {
-        const basic_top = 320;
+        const basic_top = 430;
         const basic_left = 750;
         const basic_height = 150;
         const basic_width = 150;
