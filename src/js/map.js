@@ -50,10 +50,10 @@ document.addEventListener("DOMContentLoaded", function(event){
         window_width = window.innerWidth;
 
         if ((window_height/window_width) > (basic_height/basic_width)) {
-            cover_width = window_width;
+            cover_width = window_width - 20;
             cover_height = window_width * basic_height / basic_width;
         } else {
-            cover_height = window_height;
+            cover_height = window_height - 20;
             cover_width = window_height * basic_width / basic_height;
         }
 
