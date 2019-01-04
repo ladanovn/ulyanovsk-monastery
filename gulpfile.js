@@ -6,6 +6,7 @@ const cssnano = require("cssnano");
 const autoprefixer = require("autoprefixer");
 const babel = require('gulp-babel');
 const rename = require("gulp-rename");
+const minifyjs = require("gulp-js-minify");
 const imagemin = require("gulp-imagemin");
 const imageminPngquant = require('imagemin-pngquant');
 
@@ -40,6 +41,8 @@ function js() {
     .pipe(babel({
       presets: ['@babel/env']
     }))
+    .pipe(rename({ suffix: ".min" }))
+    .pipe(minifyjs())
     .pipe(gulp.dest('./dist/js'))
     .pipe(browsersync.stream());
 }

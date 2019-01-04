@@ -1,0 +1,46 @@
+body {
+    margin: 0px;
+
+    .view {
+        position: relative;
+        background: #f7d04e;
+        overflow: hidden;
+    
+        .background {
+            &__vert-pattern,
+            &__cloud, 
+            &__forest,
+            &__trees {
+                position: absolute;
+            }
+            &__vert-pattern{
+                opacity: 0.439;
+            }
+        }
+
+        .monastery {
+            &__map {
+                position: absolute;
+            }
+        }
+
+        .decoration {
+            &__cow,
+            &__fishermen,
+            &__monarchs,
+            &__pahari,
+            &__ship,
+            &__ship-monarchs {
+                position: absolute;
+            }
+        }
+
+        .nav {
+            &__back, 
+            &__magnifier {
+                position: absolute;
+                cursor: pointer;
+            }
+        }
+    }
+}
