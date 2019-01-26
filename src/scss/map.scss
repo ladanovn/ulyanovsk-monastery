@@ -58,9 +58,14 @@ body {
                 animation: rockBoat 4s linear infinite alternate;
             }
 
+            &__pahari {
+                transition: .1s;
+                animation: movePahari 30s linear infinite;                
+            }
+
             &__ship {
                 transition: .1s;
-                animation: moveShip 30s linear infinite;
+                animation: moveShip 40s linear infinite;
             }
         }
 
@@ -151,5 +156,47 @@ body {
     100% {
         left: 100%;
         transform: scale(-1, 1);
+    }
+}
+
+@keyframes movePahari {
+    0% {
+        top: 64%;
+        left: 20%;
+        transform: scale(1, 1) rotate(0deg);
+    }
+
+    15% {
+        top: 64%;
+        left: 20%;
+        transform: scale(1, 1);
+    }
+
+    25% {
+        top: 77%;
+        left: 8%;
+        transform: scale(1, 1) rotate(0deg);
+    }
+
+    30% {
+        top: 77%;
+        left: 8%;
+        transform: scale(-1, 1) rotate(8deg);
+    }
+
+    85% {
+        top: 77%;
+        left: 8%;
+        transform: scale(-1, 1) rotate(8deg);   
+    }
+
+    95% {
+        top: 64%;
+        left: 20%;
+        transform: scale(-1, 1) rotate(8deg);
+    }
+
+    100% {
+        transform: scale(1, 1) rotate(0deg);   
     }
 }
