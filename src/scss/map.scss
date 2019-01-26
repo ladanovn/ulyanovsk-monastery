@@ -57,6 +57,11 @@ body {
                 transition: .1s;
                 animation: rockBoat 4s linear infinite alternate;
             }
+
+            &__ship {
+                transition: .1s;
+                animation: moveShip 30s linear infinite;
+            }
         }
 
         .nav {
@@ -74,6 +79,7 @@ body {
         transform:rotate(360deg); 
     } 
 }
+
 @keyframes rockBoat {
     0% {
         top: 81%;
@@ -98,5 +104,52 @@ body {
     100% {
         top: 81%;
         left: 36%;
+    }
+}
+
+@keyframes moveShip {
+    0% {
+        top: 83%;
+        left: 100%;
+        transform: scale(1, 1);
+    }
+
+    25% {
+        top: 83%;
+        left: 100%;
+        transform: scale(1, 1);
+    }
+
+    35% {
+        top: 83%;
+    }
+
+    45% {
+        top: 80%;
+    }
+
+    50% {
+        top: 80%;
+        left: -20%;
+        transform: scale(1, 1);
+    }
+
+    75% {
+        top: 80%;
+        left: -20%;
+        transform: scale(-1, 1);
+    }
+
+    80% {
+        top: 80%;
+    }
+
+    90% {
+        top: 83%;
+    }
+
+    100% {
+        left: 100%;
+        transform: scale(-1, 1);
     }
 }
