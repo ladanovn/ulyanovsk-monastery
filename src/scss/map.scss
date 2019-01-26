@@ -52,6 +52,11 @@ body {
             &__ship-monarchs {
                 position: absolute;
             }
+
+            &__fishermen {
+                transition: .1s;
+                animation: rockBoat 4s linear infinite alternate;
+            }
         }
 
         .nav {
@@ -68,4 +73,30 @@ body {
     100% { 
         transform:rotate(360deg); 
     } 
+}
+@keyframes rockBoat {
+    0% {
+        top: 81%;
+        left: 36%;
+    }
+
+    25% {
+        top: 81.5%;
+        left: 35.5%;
+    }
+
+    50% {
+        top: 82%;
+        left: 36%;
+    }
+
+    75% {
+        top: 81.5%;
+        left: 36.5%;
+    }
+
+    100% {
+        top: 81%;
+        left: 36%;
+    }
 }
