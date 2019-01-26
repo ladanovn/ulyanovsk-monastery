@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     }
 
     function cloudSize() {
-        const basic_top = 142 - 220;
+        const basic_top = 220 - 220;
         const basic_left = 77;
         const basic_height = 738;
         const basic_width = 1119;
