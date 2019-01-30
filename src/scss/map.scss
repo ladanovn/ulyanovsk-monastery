@@ -1,6 +1,6 @@
 body {
     margin: 0px;
-    background: #d2d2d2;
+    background: #231F20;
 
     img {
         transition: filter .5s;
@@ -12,6 +12,7 @@ body {
         overflow: hidden;
         box-shadow: 0 0 100px 10px #0d0d0dde;    
         transition: background .5s;
+        border-radius: 10px;
 
         &__loader {
             position: absolute;
