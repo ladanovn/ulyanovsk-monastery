@@ -104,13 +104,26 @@ body {
             &__back, 
             &__magnifier {
                 position: absolute;
-                transition: filter .2s ease;
+                transition: filter, transform .25s ease;
+            }
+
+            &__back {
+                width: 4.9%;
+                top: 5%;
+                left: 19.6%;
+            }
+
+            &__magnifier {
+                width: 4.4%;
+                top: 15.9%;
+                left: 19.95%;
             }
 
             a:focus img,
             a:hover img {
                 cursor: pointer;
-                filter: drop-shadow(5px 5px 10px #333);
+                transform: scale(1.1, 1.1);
+                filter: brightness(80%) sepia(30%) hue-rotate(40deg) saturate(278%);
             }
         }
 

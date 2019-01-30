@@ -7,10 +7,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     const vertPattern = document.getElementsByClassName('background__vert-pattern')[0];
     const cloud = document.getElementsByClassName('background__cloud')[0];
     const forest = document.getElementsByClassName('background__forest')[0];
-    const mapMonastery = document.getElementsByClassName('monastery__map')[0];
-    const navBack = document.getElementsByClassName('nav__back')[0];
-    const navMagnifier = document.getElementsByClassName('nav__magnifier')[0];
-    const decorCow = document.getElementsByClassName('decoration__cow')[0];
+    const mapMonastery = document.getElementsByClassName('monastery__map')[0];  const decorCow = document.getElementsByClassName('decoration__cow')[0];
     const decorFishmens = document.getElementsByClassName('decoration__fishermen')[0];
     const decorMonarchs = document.getElementsByClassName('decoration__monarchs')[0];
     const decorPahari = document.getElementsByClassName('decoration__pahari')[0];
@@ -58,8 +55,6 @@ document.addEventListener("DOMContentLoaded", function(event){
         cloudSize();
         forestSize();
         mapMonasterySize();
-        navBackSize();
-        navMagnifierSize();
         decorCowSize();
         decorFishmensSize();
         decorMonarchsSize();
@@ -154,31 +149,7 @@ document.addEventListener("DOMContentLoaded", function(event){
         mapMonastery.style.top = `${basic_top * coef_height}px`;
         mapMonastery.style.left = `${basic_left * coef_width}px`;
     }    
-
-    function navBackSize() {
-        const basic_top = 45 ;
-        const basic_left = 330;
-        const basic_height = 75;
-        const basic_width = 82;
-
-        navBack.style.width = `${basic_width * coef_width}px`;
-        navBack.style.height = `${basic_height * coef_height}px`;
-        navBack.style.top = `${basic_top * coef_height}px`;
-        navBack.style.left = `${basic_left * coef_width}px`;
-    }  
-      
-    function navMagnifierSize() {
-        const basic_top = 143 ;
-        const basic_left = 335;
-        const basic_height = 96;
-        const basic_width = 74;
-
-        navMagnifier.style.width = `${basic_width * coef_width}px`;
-        navMagnifier.style.height = `${basic_height * coef_height}px`;
-        navMagnifier.style.top = `${basic_top * coef_height}px`;
-        navMagnifier.style.left = `${basic_left * coef_width}px`;
-    }  
-
+    
     function decorCowSize() {
         const basic_top = 573 - 220;
         const basic_left = 1169;
