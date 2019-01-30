@@ -15,10 +15,6 @@
     const bodyBird1 = document.getElementsByClassName('title__body-bird-1')[0];
     const headBird2 = document.getElementsByClassName('title__head-bird-2')[0];
     const bodyBird2 = document.getElementsByClassName('title__body-bird-2')[0];
-    const navMap = document.getElementsByClassName('nav__map')[0];
-    const navHistory = document.getElementsByClassName('nav__history')[0];
-    const navGalary = document.getElementsByClassName('nav__galary')[0];
-    const navAbout = document.getElementsByClassName('nav__about')[0];
 
     let window_height;
     let window_width;
@@ -47,10 +43,6 @@
         bodyBird1Size();
         headBird2Size();
         bodyBird2Size();
-        navMapSize();
-        navHistorySize();
-        navGalarySize();
-        navAboutSize();
     }
 
     function viewSize() {
@@ -244,54 +236,7 @@
         bodyBird2.style.top = `${basic_top * coef_height}px`;
         bodyBird2.style.left = `${basic_left * coef_width}px`;
     }    
-      
-    function navMapSize() {
-        const basic_top = 98;
-        const basic_left = 271;
-        const basic_height = 78;
-        const basic_width = 66;
 
-        navMap.style.width = `${basic_width * coef_width}px`;
-        navMap.style.height = `${basic_height * coef_height}px`;
-        navMap.style.top = `${basic_top * coef_height}px`;
-        navMap.style.left = `${basic_left * coef_width}px`;
-    }
-      
-    function navHistorySize() {
-        const basic_top = 212;
-        const basic_left = 264;
-        const basic_height = 75;
-        const basic_width = 87;
-
-        navHistory.style.width = `${basic_width * coef_width}px`;
-        navHistory.style.height = `${basic_height * coef_height}px`;
-        navHistory.style.top = `${basic_top * coef_height}px`;
-        navHistory.style.left = `${basic_left * coef_width}px`;
-    }
-
-    function navGalarySize() {
-        const basic_top = 330;
-        const basic_left = 272;
-        const basic_height = 70;
-        const basic_width = 68;
-
-        navGalary.style.width = `${basic_width * coef_width}px`;
-        navGalary.style.height = `${basic_height * coef_height}px`;
-        navGalary.style.top = `${basic_top * coef_height}px`;
-        navGalary.style.left = `${basic_left * coef_width}px`;
-    }
-
-    function navAboutSize() {
-        const basic_top = 432;
-        const basic_left = 264;
-        const basic_height = 90;
-        const basic_width = 88;
-
-        navAbout.style.width = `${basic_width * coef_width}px`;
-        navAbout.style.height = `${basic_height * coef_height}px`;
-        navAbout.style.top = `${basic_top * coef_height}px`;
-        navAbout.style.left = `${basic_left * coef_width}px`;
-    }
     
     imagesLoaded(view, ()=>{
         cover.style.opacity = 1;
