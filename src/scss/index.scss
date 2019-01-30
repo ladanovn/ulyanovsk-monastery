@@ -82,7 +82,7 @@ body {
             &__galary,
             &__about {
                 position: absolute;
-                transition: .3s ease;
+                transition: filter .2s ease;
             }
 
             a:focus img,

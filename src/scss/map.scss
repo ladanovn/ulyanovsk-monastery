@@ -71,9 +71,21 @@ body {
 
         .buildings {
 
+            button {
+                border: none;
+                outline: none;
+                background: none;
+            }
+
+            button:focus img,
+            button:hover img {
+                cursor: pointer;
+                filter: drop-shadow(5px 5px 10px #333);
+            }
+
             &__0 {
                 position: absolute;
-                cursor: pointer;
+                transition: filter .2s ease;
             }
         }
 
@@ -81,7 +93,7 @@ body {
             &__back, 
             &__magnifier {
                 position: absolute;
-                transition: .3s ease;
+                transition: filter .2s ease;
             }
 
             a:focus img,

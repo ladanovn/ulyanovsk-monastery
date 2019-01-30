@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", function(event){
     const decorShip = document.getElementsByClassName('decoration__ship')[0];
     const decorShipMonarchs = document.getElementsByClassName('decoration__ship-monarchs')[0];
 
+    const building0 = document.getElementsByClassName('buildings__0')[0];
+
     let window_height;
     let window_width;
 
@@ -41,6 +43,8 @@ document.addEventListener("DOMContentLoaded", function(event){
         decorPahariSize();
         decorShipSize();
         decorShipMonarchsSize();
+
+        building0Size();
     }
 
     function viewSize() {
@@ -222,6 +226,18 @@ document.addEventListener("DOMContentLoaded", function(event){
         decorShipMonarchs.style.height = `${basic_height * coef_height}px`;
         decorShipMonarchs.style.top = `${basic_top * coef_height}px`;
         decorShipMonarchs.style.left = `${basic_left * coef_width}px`;
+    }  
+
+    function building0Size() {
+        const basic_top = 537 - 220;
+        const basic_left = 333;
+        const basic_height = 207;
+        const basic_width = 188;
+
+        building0.style.width = `${basic_width * coef_width}px`;
+        building0.style.height = `${basic_height * coef_height}px`;
+        building0.style.top = `${basic_top * coef_height}px`;
+        building0.style.left = `${basic_left * coef_width}px`;
     }  
       
     imagesLoaded(view, ()=>{
