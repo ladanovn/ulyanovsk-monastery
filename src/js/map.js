@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function(event){
     const view = document.getElementsByClassName('view')[0];
     const loader = document.getElementsByClassName('loader')[0];
     const cover = document.getElementsByClassName('cover')[0];
+    const popup = document.getElementsByClassName('popup')[0];
+    const popupClose = document.getElementsByClassName('popup__close')[0];
     const vertPattern = document.getElementsByClassName('background__vert-pattern')[0];
     const cloud = document.getElementsByClassName('background__cloud')[0];
     const forest = document.getElementsByClassName('background__forest')[0];
@@ -14,8 +16,29 @@ document.addEventListener("DOMContentLoaded", function(event){
     const decorPahari = document.getElementsByClassName('decoration__pahari')[0];
     const decorShip = document.getElementsByClassName('decoration__ship')[0];
     const decorShipMonarchs = document.getElementsByClassName('decoration__ship-monarchs')[0];
-
     const building0 = document.getElementsByClassName('buildings__0')[0];
+
+    const btns = document.getElementsByClassName('building__btn');
+    const imgs = document.getElementsByTagName("img");
+
+    Array.prototype.forEach.call(btns, btn => {
+        btn.onclick = () => {
+            view.style.background = '#d0c4cc';
+            Array.prototype.forEach.call(imgs, img => {
+                if (img !== btn.children[0]) {
+                    img.style.filter = 'hue-rotate(-70deg) grayscale(0.8)'
+                }                 
+            });
+            popup.className = 'popup popup--open';
+        }
+    });
+    popupClose.addEventListener('click', () => {
+        Array.prototype.forEach.call(imgs, img => {
+            img.style.filter = '';    
+        });
+        view.style.background = '#f7d04e';
+        popup.className = 'popup popup--close';
+    });
 
     let window_height;
     let window_width;
