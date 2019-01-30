@@ -69,11 +69,25 @@ body {
             }
         }
 
+        .buildings {
+
+            &__0 {
+                position: absolute;
+                cursor: pointer;
+            }
+        }
+
         .nav {
             &__back, 
             &__magnifier {
                 position: absolute;
+                transition: .3s ease;
+            }
+
+            a:focus img,
+            a:hover img {
                 cursor: pointer;
+                filter: drop-shadow(5px 5px 10px #333);
             }
         }
     }
