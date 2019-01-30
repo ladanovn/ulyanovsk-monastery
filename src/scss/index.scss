@@ -6,9 +6,9 @@ body {
         position: relative;
         background: #f7d04e;
         overflow: hidden;
-        box-shadow: 0 0 100px 10px #0d0d0dde;    
+        box-shadow: 0 0 100px 10px #0d0d0dde;
         border-radius: 10px;
-        
+
         &__loader {
             position: absolute;
             border: 16px solid #f7f7f7;
@@ -26,27 +26,31 @@ body {
             opacity: 0;
         }
 
-        .background {
+        .back {
             &__vert-pattern {
                 position: absolute;
                 opacity: 0.439;
             }
-            &__circle-pattern, 
+
+            &__circle-pattern,
             &__text-pattern,
             &__trees {
                 position: absolute;
             }
+
             &__circle-pattern {
-                animation:spin 15s linear infinite;
+                animation: spin 15s linear infinite;
             }
         }
 
         .peacock {
+
             &__paws,
             &__tail,
             &__body {
                 position: absolute;
             }
+
             &__tail {
                 animation: peacock-wag 1s linear infinite;
                 transform-origin: 100% 0;
@@ -60,6 +64,7 @@ body {
         }
 
         .title {
+
             &__name,
             &__wind-bird-1,
             &__body-bird-1,
@@ -67,18 +72,21 @@ body {
             &__body-bird-2 {
                 position: absolute;
             }
+
             &__wind-bird-1 {
                 animation: title-bird-wag 1.5s linear infinite;
                 transform-origin: 100% 0;
             }
+
             &__head-bird-2 {
                 animation: title-bird-nodding 2s linear infinite;
-                transform-origin: 0 50% ;                
+                transform-origin: 0 50%;
             }
         }
 
         .nav {
-            &__map, 
+
+            &__map,
             &__history,
             &__galary,
             &__about {
@@ -107,58 +115,65 @@ body {
             &__about {
                 top: 47.4%;
                 left: 15.8%;
-                width: 5.2%;            
+                width: 5.2%;
             }
 
             a:focus img,
             a:hover img {
                 cursor: pointer;
+                outline: none;
                 transform: scale(1.1, 1.1);
                 filter: brightness(80%) sepia(30%) hue-rotate(40deg) saturate(278%);
             }
         }
     }
-    
+
 }
 
-@keyframes spin { 
-    100% { 
-        transform:rotate(360deg); 
-    } 
-}
-
-@keyframes peacock-wag { 
-    0% { 
-        transform: rotate(3deg); 
-    } 
-    50% {
-        transform: rotate(10deg); 
-    }
+@keyframes spin {
     100% {
-        transform: rotate(3deg); 
+        transform: rotate(360deg);
     }
 }
 
-@keyframes title-bird-wag { 
-    0% { 
-        transform: rotate(-2deg); 
-    } 
-    50% {
-        transform: rotate(15deg); 
+@keyframes peacock-wag {
+    0% {
+        transform: rotate(3deg);
     }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
     100% {
-        transform: rotate(-2deg); 
+        transform: rotate(3deg);
     }
 }
 
-@keyframes title-bird-nodding { 
-    0% { 
-        transform: rotate(0deg); 
-    } 
-    50% {
-        transform: rotate(10deg); 
+@keyframes title-bird-wag {
+    0% {
+        transform: rotate(-2deg);
     }
+
+    50% {
+        transform: rotate(15deg);
+    }
+
     100% {
-        transform: rotate(0deg); 
+        transform: rotate(-2deg);
+    }
+}
+
+@keyframes title-bird-nodding {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
     }
 }
