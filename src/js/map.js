@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function (event) {
 	const view = document.getElementsByClassName('view')[0];
-	const loader = document.getElementsByClassName('loader')[0];
 	const cover = document.getElementsByClassName('cover')[0];
+	const loader = document.getElementsByClassName('loader')[0];
 	const popup = document.getElementsByClassName('popup')[0];
 	const popupClose = document.getElementsByClassName('popup__close')[0];
 	const vertPattern = document.getElementsByClassName('background__vert-pattern')[0];
@@ -59,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 	function resize() {
 		viewSize();
-		loaderSize();
 		vertPatternSize();
 		cloudSize();
 		forestSize();
@@ -96,19 +95,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		view.style.height = `${cover_height}px`;
 		view.style.top = `${(window_height-cover_height)/2}px`;
 		view.style.left = `${(window_width-cover_width)/2}px`;
-	}
-
-
-	function loaderSize() {
-		const basic_top = 320;
-		const basic_left = 750;
-		const basic_height = 150;
-		const basic_width = 150;
-
-		loader.style.width = `${basic_width * coef_width}px`;
-		loader.style.height = `${basic_height * coef_height}px`;
-		loader.style.top = `${basic_top * coef_height}px`;
-		loader.style.left = `${basic_left * coef_width}px`;
 	}
 
 	function vertPatternSize() {

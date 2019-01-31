@@ -8,22 +8,30 @@ body {
 
     .view {
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background: #f7d04e;
         overflow: hidden;
-        box-shadow: 0 0 100px 10px #0d0d0dde;    
-        transition: background .5s;
+        box-shadow: 0 0 100px 10px #0d0d0dde;
         border-radius: 10px;
 
         &__loader {
-            position: absolute;
+            position: relative;
+            box-sizing: border-box;
             border: 16px solid #f7f7f7;
-            border-top: 16px solid #0d0d0dde;
+            border-top: 16px solid #231F20;
             border-radius: 50%;
-            width: 120px;
-            height: 120px;
-            animation: spin 1s linear infinite;
+            width: 15%;
+            animation: spin .8s linear infinite;
             transition: .3s;
             opacity: 1;
+        }
+
+        &__loader:after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
         }
 
         &__cover {
@@ -36,13 +44,15 @@ body {
         }
 
         .background {
+
             &__vert-pattern,
-            &__cloud, 
+            &__cloud,
             &__forest,
             &__trees {
                 position: absolute;
             }
-            &__vert-pattern{
+
+            &__vert-pattern {
                 opacity: 0.439;
             }
         }
@@ -54,7 +64,7 @@ body {
         }
 
         .decoration {
-            
+
             &__cow,
             &__fishermen,
             &__monarchs,
@@ -71,7 +81,7 @@ body {
 
             &__pahari {
                 transition: .1s;
-                animation: movePahari 30s linear infinite;                
+                animation: movePahari 30s linear infinite;
             }
 
             &__ship {
@@ -95,7 +105,8 @@ body {
         }
 
         .nav {
-            &__back, 
+
+            &__back,
             &__magnifier {
                 position: absolute;
                 transition: filter, transform .25s ease;
@@ -123,12 +134,12 @@ body {
 
         .popup {
             transition: opacity .5s;
-            
+
             &--open {
                 animation: openPopup 1s ease;
                 animation-fill-mode: forwards;
             }
-    
+
             &--close {
                 display: none;
                 opacity: 0;
@@ -152,14 +163,14 @@ body {
                 cursor: pointer;
             }
         }
-        
+
     }
 }
 
-@keyframes spin { 
-    100% { 
-        transform:rotate(360deg); 
-    } 
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes rockBoat {
@@ -264,7 +275,7 @@ body {
     85% {
         top: 77%;
         left: 8%;
-        transform: scale(-1, 1) rotate(8deg);   
+        transform: scale(-1, 1) rotate(8deg);
     }
 
     95% {
@@ -274,7 +285,7 @@ body {
     }
 
     100% {
-        transform: scale(1, 1) rotate(0deg);   
+        transform: scale(1, 1) rotate(0deg);
     }
 }
 
@@ -293,7 +304,7 @@ body {
     0% {
         opacity: 1;
     }
-    
+
     100% {
         display: block;
         opacity: 0;

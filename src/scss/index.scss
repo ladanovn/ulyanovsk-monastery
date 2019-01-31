@@ -4,21 +4,30 @@ body {
 
     .view {
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background: #f7d04e;
         overflow: hidden;
         box-shadow: 0 0 100px 10px #0d0d0dde;
         border-radius: 10px;
 
         &__loader {
-            position: absolute;
+            position: relative;
+            box-sizing: border-box;
             border: 16px solid #f7f7f7;
-            border-top: 16px solid #0d0d0dde;
+            border-top: 16px solid #231F20;
             border-radius: 50%;
-            width: 120px;
-            height: 120px;
-            animation: spin 1s linear infinite;
+            width: 15%;
+            animation: spin .8s linear infinite;
             transition: .3s;
             opacity: 1;
+        }
+
+        &__loader:after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
         }
 
         &__cover {
