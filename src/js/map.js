@@ -1,3 +1,5 @@
+let selectedBuilding = false;
+
 document.addEventListener("DOMContentLoaded", function (event) {
 	const view = document.getElementsByClassName('view')[0];
 	const cover = document.getElementsByClassName('cover')[0];
@@ -21,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 	Array.prototype.forEach.call(btns, btn => {
 		btn.onclick = () => {
+			selectedBuilding = true;
 			view.style.background = '#d0c4cc';
 			Array.prototype.forEach.call(imgs, img => {
 				if (img !== btn.children[0]) {
@@ -38,10 +41,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		});
 	});
 
+
+	building0.addEventListener('mouseover', function () {
+		view.style.background = '#d0c4cc';
+		Array.prototype.forEach.call(imgs, img => {
+			if (img !== this) {
+				img.style.filter = 'hue-rotate(-70deg) grayscale(0.8)'
+			}
+		});
+	});
+
+	building0.addEventListener('mouseout', function () {
+		if (!selectedBuilding) {
+			view.style.background = '#f7d04e';
+			Array.prototype.forEach.call(imgs, img => {
+				if (img !== this) {
+					img.style.filter = '';
+				}
+			});
+		}
+	});
+
 	popupClose.addEventListener('click', () => {
 		Array.prototype.forEach.call(imgs, img => {
 			img.style.filter = '';
 		});
+		selectedBuilding = false;
 		view.style.background = '#f7d04e';
 		popup.className = 'popup popup--close';
 	});

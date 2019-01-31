@@ -15,6 +15,7 @@ body {
         overflow: hidden;
         box-shadow: 0 0 100px 10px #0d0d0dde;
         border-radius: 10px;
+        transition: background .5s ease;
 
         &__loader {
             position: relative;
@@ -96,11 +97,12 @@ body {
             a:hover img {
                 cursor: pointer;
                 filter: drop-shadow(5px 5px 10px #fff);
+                transform: scale(1.05, 1.05) translateY(-2%);
             }
 
-            &__0 {
+            a img {
                 position: absolute;
-                transition: filter .2s ease;
+                transition: filter, transform .2s ease;
             }
         }
 
@@ -136,7 +138,7 @@ body {
             transition: opacity .5s;
 
             &--open {
-                animation: openPopup 1s ease;
+                animation: openPopup .5s ease;
                 animation-fill-mode: forwards;
             }
 

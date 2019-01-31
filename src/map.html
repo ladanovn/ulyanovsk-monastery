@@ -1,65 +1,71 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Троице-стефано-ульяновский монастырь</title>
     <link rel="stylesheet" href="css/map.min.css" />
-</head>
+  </head>
 
-<body>
-
+  <body>
     <main class="view">
+      <div class="loader view__loader"></div>
+      <div class="cover view__cover">
+        <section class="background cover__background">
+          <img
+            src="./img/map/vert-pattern.png"
+            class="background__vert-pattern"
+          />
+          <img src="./img/map/cloud.png" class="background__cloud" />
+          <img src="./img/map/forest.png" class="background__forest" />
+        </section>
 
-        <div class="loader view__loader"></div>
-        <div class="cover view__cover">
+        <section class="monastery cover__monastery">
+          <img src="./img/map/monastery.png" class="monastery__map" />
+        </section>
 
-            <section class="background cover__background">
-                <img src="./img/map/vert-pattern.png" class="background__vert-pattern">
-                <img src="./img/map/cloud.png" class="background__cloud">
-                <img src="./img/map/forest.png" class="background__forest">
-            </section>
+        <section class="decoration cover__decoration">
+          <img src="./img/map/cows.png" class="decoration__cow" />
+          <img src="./img/map/fishermen.png" class="decoration__fishermen" />
+          <img src="./img/map/monarchs.png" class="decoration__monarchs" />
+          <img src="./img/map/pahari.png" class="decoration__pahari" />
+          <img
+            src="./img/map/shipsMonarchs.png"
+            class="decoration__ship-monarchs"
+          />
+          <img src="./img/map/ship.png" class="decoration__ship" />
+        </section>
 
-            <section class="monastery cover__monastery">
-                <img src="./img/map/monastery.png" class="monastery__map">
-            </section>
+        <nav class="nav cover__nav">
+          <a href="./index.html" tabindex="1">
+            <img src="./img/map/back.png" class="nav__back" alt="назад" />
+          </a>
+          <a href="#" tabindex="2">
+            <img
+              src="./img/map/magnifier.png"
+              class="nav__magnifier"
+              alt="поиск"
+            />
+          </a>
+        </nav>
 
-            <section class="decoration cover__decoration">
-                <img src="./img/map/cows.png" class="decoration__cow">
-                <img src="./img/map/fishermen.png" class="decoration__fishermen">
-                <img src="./img/map/monarchs.png" class="decoration__monarchs">
-                <img src="./img/map/pahari.png" class="decoration__pahari">
-                <img src="./img/map/shipsMonarchs.png" class="decoration__ship-monarchs">
-                <img src="./img/map/ship.png" class="decoration__ship">
-            </section>
+        <section class="buildings cover__buildings">
+          <a class="building__btn" tabindex="3">
+            <img
+              src="./img/map/buildings/0.png"
+              class="buildings__0"
+              alt="объект №1"
+            />
+          </a>
+        </section>
 
-            <nav class="nav cover__nav">
-                <a href="./index.html" tabindex="1">
-                    <img src="./img/map/back.png" class="nav__back" alt="назад">
-                </a>
-                <a href="#" tabindex="2">
-                    <img src="./img/map/magnifier.png" class="nav__magnifier" alt="поиск">
-                </a>
-            </nav>
-
-            <section class="buildings cover__buildings">
-                <a class="building__btn" tabindex="3">
-                    <img src='./img/map/buildings/0.png' class="buildings__0" alt="объект №1">
-                </a>
-            </section>
-
-            <section class="popup popup--close cover__popup">
-                <div class="popup__build-info">
-                </div>
-                <div class="popup__close">
-                </div>
-            </section>
-        </div>
-
+        <section class="popup popup--close cover__popup">
+          <div class="popup__build-info"></div>
+          <div class="popup__close"></div>
+        </section>
+      </div>
     </main>
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <script src="js/map.min.js"></script>
-</body>
-
+  </body>
 </html>
