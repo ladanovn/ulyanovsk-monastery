@@ -6,59 +6,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
   const loader = document.getElementsByClassName("loader")[0];
   const popup = document.getElementsByClassName("popup")[0];
   const popupClose = document.getElementsByClassName("popup__close")[0];
-  const vertPattern = document.getElementsByClassName(
-    "background__vert-pattern"
-  )[0];
-  const cloud = document.getElementsByClassName("background__cloud")[0];
-  const forest = document.getElementsByClassName("background__forest")[0];
-  const mapMonastery = document.getElementsByClassName("monastery__map")[0];
-  const decorCow = document.getElementsByClassName("decoration__cow")[0];
-  const decorFishmens = document.getElementsByClassName(
-    "decoration__fishermen"
-  )[0];
-  const decorMonarchs = document.getElementsByClassName(
-    "decoration__monarchs"
-  )[0];
-  const decorPahari = document.getElementsByClassName("decoration__pahari")[0];
-  const decorShip = document.getElementsByClassName("decoration__ship")[0];
-  const decorShipMonarchs = document.getElementsByClassName(
-    "decoration__ship-monarchs"
-  )[0];
 
   const buildingImg = document.getElementsByClassName("building");
   const buildingBtns = document.getElementsByClassName("building__btn");
   const allImgs = document.getElementsByTagName("img");
-
-  function onBuildFocus() {
-    view.style.background = "#d0c4cc";
-    Array.prototype.forEach.call(allImgs, img => {
-      if (img !== this.children[0] && img !== this) {
-        img.style.filter = "hue-rotate(-70deg) grayscale(0.8)";
-      }
-    });
-  }
-
-  function onBuildBlur() {
-    if (!selectedBuilding) {
-      view.style.background = "#f7d04e";
-      Array.prototype.forEach.call(allImgs, img => {
-        if (img !== this.children[0]) {
-          img.style.filter = "";
-        }
-      });
-    }
-  }
-
-  function onBuildClick() {
-    selectedBuilding = true;
-    view.style.background = "#d0c4cc";
-    Array.prototype.forEach.call(allImgs, img => {
-      if (img !== this.children[0]) {
-        img.style.filter = "hue-rotate(-70deg) grayscale(0.8)";
-      }
-    });
-    popup.className = "popup popup--open";
-  }
 
   Array.prototype.forEach.call(buildingBtns, btn => {
     btn.addEventListener("click", onBuildClick);
@@ -81,10 +32,31 @@ document.addEventListener("DOMContentLoaded", function(event) {
     selectedBuilding = false;
     view.style.background = "#f7d04e";
     popup.className = "popup popup--close";
+
     Array.prototype.forEach.call(allImgs, img => {
       img.style.filter = "";
     });
   });
+
+  // TODO: from JS to CSS
+  const vertPattern = document.getElementsByClassName(
+    "background__vert-pattern"
+  )[0];
+  const cloud = document.getElementsByClassName("background__cloud")[0];
+  const forest = document.getElementsByClassName("background__forest")[0];
+  const mapMonastery = document.getElementsByClassName("monastery__map")[0];
+  const decorCow = document.getElementsByClassName("decoration__cow")[0];
+  const decorFishmens = document.getElementsByClassName(
+    "decoration__fishermen"
+  )[0];
+  const decorMonarchs = document.getElementsByClassName(
+    "decoration__monarchs"
+  )[0];
+  const decorPahari = document.getElementsByClassName("decoration__pahari")[0];
+  const decorShip = document.getElementsByClassName("decoration__ship")[0];
+  const decorShipMonarchs = document.getElementsByClassName(
+    "decoration__ship-monarchs"
+  )[0];
 
   let window_height;
   let window_width;
@@ -264,3 +236,34 @@ document.addEventListener("DOMContentLoaded", function(event) {
     resize();
   };
 });
+
+function onBuildFocus() {
+  view.style.background = "#d0c4cc";
+  Array.prototype.forEach.call(allImgs, img => {
+    if (img !== this.children[0] && img !== this) {
+      img.style.filter = "hue-rotate(-70deg) grayscale(0.8)";
+    }
+  });
+}
+
+function onBuildBlur() {
+  if (!selectedBuilding) {
+    view.style.background = "#f7d04e";
+    Array.prototype.forEach.call(allImgs, img => {
+      if (img !== this.children[0]) {
+        img.style.filter = "";
+      }
+    });
+  }
+}
+
+function onBuildClick() {
+  selectedBuilding = true;
+  view.style.background = "#d0c4cc";
+  Array.prototype.forEach.call(allImgs, img => {
+    if (img !== this.children[0]) {
+      img.style.filter = "hue-rotate(-70deg) grayscale(0.8)";
+    }
+  });
+  popup.className = "popup popup--open";
+}
