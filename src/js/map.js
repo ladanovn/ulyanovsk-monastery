@@ -235,35 +235,35 @@ document.addEventListener("DOMContentLoaded", function(event) {
   window.onresize = function() {
     resize();
   };
-});
 
-function onBuildFocus() {
-  view.style.background = "#d0c4cc";
-  Array.prototype.forEach.call(allImgs, img => {
-    if (img !== this.children[0] && img !== this) {
-      img.style.filter = "hue-rotate(-70deg) grayscale(0.8)";
-    }
-  });
-}
-
-function onBuildBlur() {
-  if (!selectedBuilding) {
-    view.style.background = "#f7d04e";
+  function onBuildFocus() {
+    view.style.background = "#d0c4cc";
     Array.prototype.forEach.call(allImgs, img => {
-      if (img !== this.children[0]) {
-        img.style.filter = "";
+      if (img !== this.children[0] && img !== this) {
+        img.style.filter = "hue-rotate(-70deg) grayscale(0.8)";
       }
     });
   }
-}
 
-function onBuildClick() {
-  selectedBuilding = true;
-  view.style.background = "#d0c4cc";
-  Array.prototype.forEach.call(allImgs, img => {
-    if (img !== this.children[0]) {
-      img.style.filter = "hue-rotate(-70deg) grayscale(0.8)";
+  function onBuildBlur() {
+    if (!selectedBuilding) {
+      view.style.background = "#f7d04e";
+      Array.prototype.forEach.call(allImgs, img => {
+        if (img !== this.children[0]) {
+          img.style.filter = "";
+        }
+      });
     }
-  });
-  popup.className = "popup popup--open";
-}
+  }
+
+  function onBuildClick() {
+    selectedBuilding = true;
+    view.style.background = "#d0c4cc";
+    Array.prototype.forEach.call(allImgs, img => {
+      if (img !== this.children[0]) {
+        img.style.filter = "hue-rotate(-70deg) grayscale(0.8)";
+      }
+    });
+    popup.className = "popup popup--open";
+  }
+});
