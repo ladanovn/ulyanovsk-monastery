@@ -38,6 +38,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
   });
 
+  view.addEventListener("keyup", e => {
+    e.preventDefault();
+    if (e.keyCode === 27) {
+      popupClose.click();
+    }
+  });
+
   resize(view);
 
   imagesLoaded(view, () => {
