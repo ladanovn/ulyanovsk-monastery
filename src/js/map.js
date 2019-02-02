@@ -79,6 +79,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     Array.prototype.forEach.call(allImgs, img => {
       if (img !== this.children[0]) {
         img.style.filter = "hue-rotate(-70deg) grayscale(0.8)";
+      } else {
+        popup.classList.add(
+          img.offsetLeft < view.offsetWidth / 2 ? "popup-right" : "popup-left"
+        );
       }
     });
   }
@@ -88,21 +92,18 @@ function resize(view) {
   const basic_height = 1158 - 243;
   const basic_width = 1680;
 
-  let window_height;
-  let window_width;
+  let window_height = window.innerHeight;
+  let window_width = window.innerWidth;
 
   let cover_height;
   let cover_width;
 
-  window_height = window.innerHeight;
-  window_width = window.innerWidth;
-
   if (window_height / window_width > basic_height / basic_width) {
     cover_width = window_width - 20;
-    cover_height = (window_width * basic_height) / basic_width;
+    cover_height = (cover_width * basic_height) / basic_width;
   } else {
     cover_height = window_height - 20;
-    cover_width = (window_height * basic_width) / basic_height;
+    cover_width = (cover_height * basic_width) / basic_height;
   }
 
   view.style.width = `${cover_width}px`;
