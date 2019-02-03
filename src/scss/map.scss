@@ -142,7 +142,6 @@ body {
             a:focus img,
             a:hover img {
                 cursor: pointer;
-                filter: drop-shadow(5px 5px 10px #fff);
                 transform: scale(1.05, 1.05) translateY(-2%);
             }
 
