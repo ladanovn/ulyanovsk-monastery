@@ -36,19 +36,40 @@ body {
         }
 
         .back {
-            &__vert-pattern {
-                position: absolute;
-                opacity: 0.439;
-            }
 
+            &__vert-pattern,
             &__circle-pattern,
             &__text-pattern,
             &__trees {
                 position: absolute;
             }
 
+            &__vert-pattern {
+                width: 23%;
+                top: -21%;
+                left: 7%;
+                opacity: 0.439;
+            }
+
             &__circle-pattern {
                 animation: spin 15s linear infinite;
+                width: 26.3%;
+                top: 39.5%;
+                left: 53.3%;
+            }
+
+            &__text-pattern {
+                width: 41.4%;
+                height: 99%;
+                top: -8.2%;
+                left: 72.5%;
+            }
+
+            &__trees {
+                width: 79.1%;
+                height: 24.7%;
+                top: 63.1%;
+                left: -5.6%;
             }
         }
 
@@ -60,15 +81,33 @@ body {
                 position: absolute;
             }
 
+            &__paws {
+                width: 3.215%;
+                top: 66%;
+                left: 26.4%;
+            }
+
             &__tail {
                 animation: peacock-wag 1s linear infinite;
                 transform-origin: 100% 0;
+                width: 10.18%;
+                top: 62%;
+                left: 16%;
+            }
+
+            &__body {
+                width: 18.7%;
+                top: 45.5%;
+                left: 16%;
             }
         }
 
         .monastery {
             &__photo {
                 position: absolute;
+                width: 100.1%;
+                top: 10.5%;
+                left: 0px;
             }
         }
 
@@ -82,14 +121,38 @@ body {
                 position: absolute;
             }
 
+            &__name {
+                width: 32.9%;
+                top: 6.1%;
+                left: 33.7%;
+            }
+
             &__wind-bird-1 {
                 animation: title-bird-wag 1.5s linear infinite;
                 transform-origin: 100% 0;
+                width: 1.43%;
+                top: 21.5%;
+                left: 34.4%;
+            }
+
+            &__body-bird-1 {
+                width: 4.93%;
+                top: 19.5%;
+                left: 35%;
             }
 
             &__head-bird-2 {
                 animation: title-bird-nodding 2s linear infinite;
                 transform-origin: 0 50%;
+                width: 1.3%;
+                top: 21.6%;
+                left: 64.3%;
+            }
+
+            &__body-bird-2 {
+                width: 5.18%;
+                top: 21.7%;
+                left: 59.9%;
             }
         }
 
