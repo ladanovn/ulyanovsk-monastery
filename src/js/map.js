@@ -49,6 +49,9 @@
     imagesLoaded(view, () => {
       cover.style.opacity = 1;
       loader.style.opacity = 0;
+      Array.prototype.forEach.call(allImgs, img => {
+        img.style.display = 'block';
+      });
     });
 
     window.onresize = function () {
@@ -95,6 +98,11 @@
   });
 
   resize(view);
+
+  Array.prototype.forEach.call(allImgs, img => {
+    img.style.display = 'none';
+  });
+
 
   function resize(view) {
     const basic_height = 1158 - 243;
