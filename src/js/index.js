@@ -3,8 +3,6 @@
   	const cover = document.getElementsByClassName('cover')[0];
   	const loader = document.getElementsByClassName('loader')[0];
 
-  	resize();
-
   	function resize() {
   		const basic_height = 915;
   		const basic_width = 1680;
@@ -39,3 +37,6 @@
   		resize();
   	};
   });
+
+
+  resize(view);

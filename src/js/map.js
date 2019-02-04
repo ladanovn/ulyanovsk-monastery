@@ -1,6 +1,6 @@
 let selectedBuilding = false;
 
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function (event) {
   const view = document.getElementsByClassName("view")[0];
   const cover = document.getElementsByClassName("cover")[0];
   const loader = document.getElementsByClassName("loader")[0];
@@ -45,14 +45,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
   });
 
-  resize(view);
-
   imagesLoaded(view, () => {
     cover.style.opacity = 1;
     loader.style.opacity = 0;
   });
 
-  window.onresize = function() {
+  window.onresize = function () {
     resize(view);
   };
 
@@ -118,3 +116,6 @@ function resize(view) {
   view.style.top = `${(window_height - cover_height) / 2}px`;
   view.style.left = `${(window_width - cover_width) / 2}px`;
 }
+
+
+resize(view);
