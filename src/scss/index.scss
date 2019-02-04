@@ -164,6 +164,7 @@ body {
             &__about {
                 position: absolute;
                 transition: filter, transform .25s ease;
+                filter: brightness(79%) sepia(60%) hue-rotate(0deg) saturate(280%);
             }
 
             &__map {
@@ -195,7 +196,7 @@ body {
                 cursor: pointer;
                 outline: none;
                 transform: scale(1.1, 1.1);
-                filter: brightness(80%) sepia(30%) hue-rotate(40deg) saturate(278%);
+                filter: none;
             }
         }
     }
