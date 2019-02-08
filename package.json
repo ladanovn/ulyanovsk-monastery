@@ -22,5 +22,8 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "imagemin-pngquant": "^6.0.1"
+  },
+  "dependencies": {
+    "gulp-webp": "^4.0.1"
   }
 }

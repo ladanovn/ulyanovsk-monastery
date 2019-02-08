@@ -62,8 +62,14 @@
       view.style.background = "#d0c4cc";
 
       Array.prototype.forEach.call(allImgs, img => {
-        if (img !== this.children[0] && img !== this) {
-          img.style.filter = "hue-rotate(-70deg) grayscale(0.8)";
+        if (img !== this) {
+          if (this.children[0]) {
+            if (img !== this.children[0].children[1]) {
+              img.style.filter = "hue-rotate(-70deg) grayscale(0.8)";
+            }
+          } else {
+            img.style.filter = "hue-rotate(-70deg) grayscale(0.8)";
+          }
         }
       });
     }
@@ -86,7 +92,7 @@
       popup.className = "popup popup--open";
 
       Array.prototype.forEach.call(allImgs, img => {
-        if (img !== this.children[0]) {
+        if (img !== this.children[0].children[1]) {
           img.style.filter = "hue-rotate(-70deg) grayscale(0.8)";
         } else {
           popup.classList.add(
