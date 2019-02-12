@@ -7,10 +7,10 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #f7d04e;
         overflow: hidden;
-        box-shadow: 0 0 100px 10px #0d0d0dde;
+        height: 100vh;
         border-radius: 10px;
+        transition: opacity .3s ease;
 
         &__loader {
             position: relative;
@@ -19,7 +19,7 @@ body {
             border-top: 16px solid #231F20;
             border-radius: 50%;
             width: 15%;
-            animation: spin .8s linear infinite;
+            animation: spin .6s linear infinite;
             transition: .3s;
             opacity: 1;
         }

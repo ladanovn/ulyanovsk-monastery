@@ -3,8 +3,10 @@
    	const loader = document.getElementsByClassName('loader')[0];
 
    	document.addEventListener("DOMContentLoaded", () => {
-
    		imagesLoaded(view, () => {
+   			resize(view);
+   			view.style.background = "#f7d04e";
+   			view.style.boxShadow = "0 0 100px 10px #0d0d0dde";
    			cover.style.opacity = 1;
    			loader.style.opacity = 0;
    		});
@@ -12,9 +14,9 @@
    		window.onresize = function () {
    			resize(view);
    		};
+
    	});
 
-   	resize(view);
 
    	function resize(view) {
    		const basic_height = 1158 - 243;

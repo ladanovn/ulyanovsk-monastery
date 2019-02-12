@@ -12,6 +12,17 @@
 
   document.addEventListener("DOMContentLoaded", () => {
 
+    imagesLoaded(view, () => {
+      resize(view);
+      view.style.background = "#f7d04e";
+      view.style.boxShadow = "0 0 100px 10px #0d0d0dde";
+      cover.style.opacity = 1;
+      loader.style.opacity = 0;
+      Array.prototype.forEach.call(allImgs, img => {
+        img.style.display = 'block';
+      });
+    });
+
     Array.prototype.forEach.call(buildingBtns, btn => {
       btn.addEventListener("click", onBuildClick);
       btn.addEventListener("focus", onBuildFocus);
@@ -44,14 +55,6 @@
       if (e.keyCode === 27) {
         popupClose.click();
       }
-    });
-
-    imagesLoaded(view, () => {
-      cover.style.opacity = 1;
-      loader.style.opacity = 0;
-      Array.prototype.forEach.call(allImgs, img => {
-        img.style.display = 'block';
-      });
     });
 
     window.onresize = function () {
@@ -102,8 +105,6 @@
       });
     }
   });
-
-  resize(view);
 
   Array.prototype.forEach.call(allImgs, img => {
     img.style.display = 'none';
