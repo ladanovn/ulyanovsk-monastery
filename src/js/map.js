@@ -1,136 +1,137 @@
-  const view = document.getElementsByClassName("view")[0];
-  const cover = document.getElementsByClassName("cover")[0];
-  const loader = document.getElementsByClassName("loader")[0];
-  const popup = document.getElementsByClassName("popup")[0];
-  const popupClose = document.getElementsByClassName("popup__close")[0];
+const view = document.getElementsByClassName("view")[0];
+const cover = document.getElementsByClassName("cover")[0];
+const loader = document.getElementsByClassName("loader")[0];
+const popup = document.getElementsByClassName("popup")[0];
+const popupClose = document.getElementsByClassName("popup__close")[0];
+const ship = document.getElementsByClassName("elements__9")[0];
 
-  const buildingImg = document.getElementsByClassName("building");
-  const buildingBtns = document.getElementsByClassName("building__btn");
-  const allImgs = document.getElementsByTagName("img");
+const elementImg = document.getElementsByClassName("element");
+const elementBtns = document.getElementsByClassName("element__btn");
+const allImgs = document.getElementsByTagName("img");
 
-  let selectedBuilding = false;
+let selectedElement = false;
 
-  document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
+  imagesLoaded(view, () => {
+    resize(view);
+    view.style.background = "#f7d04e";
+    view.style.boxShadow = "0 0 100px 10px #0d0d0dde";
+    ship.style.animation = "moveShip 3s linear forwards";
+    cover.style.opacity = 1;
+    loader.style.opacity = 0;
 
-    imagesLoaded(view, () => {
-      resize(view);
-      view.style.background = "#f7d04e";
-      view.style.boxShadow = "0 0 100px 10px #0d0d0dde";
-      cover.style.opacity = 1;
-      loader.style.opacity = 0;
-      Array.prototype.forEach.call(allImgs, img => {
-        img.style.display = 'block';
-      });
+    Array.prototype.forEach.call(allImgs, img => {
+      img.style.display = "block";
     });
+  });
 
-    Array.prototype.forEach.call(buildingBtns, btn => {
-      btn.addEventListener("click", onBuildClick);
-      btn.addEventListener("focus", onBuildFocus);
-      btn.addEventListener("blur", onBuildBlur);
-      btn.addEventListener("keyup", e => {
-        e.preventDefault();
-        if (e.keyCode === 13) {
-          btn.click();
-        }
-      });
-    });
-
-    Array.prototype.forEach.call(buildingImg, building => {
-      building.addEventListener("mouseover", onBuildFocus);
-      building.addEventListener("mouseout", onBuildBlur);
-    });
-
-    popupClose.addEventListener("click", () => {
-      selectedBuilding = false;
-      view.style.background = "#f7d04e";
-      popup.className = "popup popup--close";
-
-      Array.prototype.forEach.call(allImgs, img => {
-        img.style.filter = "";
-      });
-    });
-
-    view.addEventListener("keyup", e => {
+  Array.prototype.forEach.call(elementBtns, btn => {
+    btn.addEventListener("click", onElementClick);
+    btn.addEventListener("focus", onElementFocus);
+    btn.addEventListener("blur", onElementBlur);
+    btn.addEventListener("keyup", e => {
       e.preventDefault();
-      if (e.keyCode === 27) {
-        popupClose.click();
+      if (e.keyCode === 13) {
+        btn.click();
       }
     });
+  });
 
-    window.onresize = function () {
-      resize(view);
-    };
+  Array.prototype.forEach.call(elementImg, element => {
+    element.addEventListener("mouseover", onElementFocus);
+    element.addEventListener("mouseout", onElementBlur);
+  });
 
-    function onBuildFocus() {
-      view.style.background = "#d0c4cc";
+  popupClose.addEventListener("click", () => {
+    selectedElement = false;
+    view.style.background = "#f7d04e";
+    popup.className = "popup popup--close";
 
-      Array.prototype.forEach.call(allImgs, img => {
-        if (img !== this) {
-          if (this.children[0]) {
-            if (img !== this.children[0].children[1]) {
-              img.style.filter = "hue-rotate(-70deg) grayscale(0.8)";
-            }
-          } else {
+    Array.prototype.forEach.call(allImgs, img => {
+      img.style.filter = "";
+    });
+  });
+
+  view.addEventListener("keyup", e => {
+    e.preventDefault();
+    if (e.keyCode === 27) {
+      popupClose.click();
+    }
+  });
+
+  window.onresize = function () {
+    resize(view);
+  };
+
+  function onElementFocus() {
+    view.style.background = "#d0c4cc";
+
+    Array.prototype.forEach.call(allImgs, img => {
+      if (img !== this) {
+        if (this.children[0]) {
+          if (img !== this.children[0].children[1]) {
             img.style.filter = "hue-rotate(-70deg) grayscale(0.8)";
           }
+        } else {
+          img.style.filter = "hue-rotate(-70deg) grayscale(0.8)";
         }
-      });
-    }
-
-    function onBuildBlur() {
-      if (!selectedBuilding) {
-        view.style.background = "#f7d04e";
-
-        Array.prototype.forEach.call(allImgs, img => {
-          if (img !== this.children[0]) {
-            img.style.filter = "";
-          }
-        });
       }
-    }
+    });
+  }
 
-    function onBuildClick() {
-      selectedBuilding = true;
-      view.style.background = "#d0c4cc";
-      popup.className = "popup popup--open";
+  function onElementBlur() {
+    if (!selectedElement) {
+      view.style.background = "#f7d04e";
 
       Array.prototype.forEach.call(allImgs, img => {
-        if (img !== this.children[0].children[1]) {
-          img.style.filter = "hue-rotate(-70deg) grayscale(0.8)";
-        } else {
-          popup.classList.add(
-            img.offsetLeft < view.offsetWidth / 2 ? "popup-right" : "popup-left"
-          );
+        if (img !== this.children[0]) {
+          img.style.filter = "";
         }
       });
     }
-  });
-
-  Array.prototype.forEach.call(allImgs, img => {
-    img.style.display = 'none';
-  });
-
-
-  function resize(view) {
-    const basic_height = 1158 - 243;
-    const basic_width = 1680;
-
-    let window_height = window.innerHeight;
-    let window_width = window.innerWidth;
-
-    let cover_height;
-    let cover_width;
-
-    if (window_height / window_width > basic_height / basic_width) {
-      cover_width = window_width - 20;
-      cover_height = (cover_width * basic_height) / basic_width;
-    } else {
-      cover_height = window_height - 20;
-      cover_width = (cover_height * basic_width) / basic_height;
-    }
-
-    view.style.width = `${cover_width}px`;
-    view.style.height = `${cover_height}px`;
-    view.style.top = `${(window_height - cover_height) / 2}px`;
-    view.style.left = `${(window_width - cover_width) / 2}px`;
   }
+
+  function onElementClick() {
+    selectedElement = true;
+    view.style.background = "#d0c4cc";
+    popup.className = "popup popup--open";
+
+    Array.prototype.forEach.call(allImgs, img => {
+      if (img !== this.children[0].children[1]) {
+        img.style.filter = "hue-rotate(-70deg) grayscale(0.8)";
+      } else {
+        popup.classList.add(
+          img.offsetLeft < view.offsetWidth / 2 ? "popup-right" : "popup-left"
+        );
+      }
+    });
+  }
+});
+
+Array.prototype.forEach.call(allImgs, img => {
+  img.style.display = "none";
+});
+
+function resize(view) {
+  const basic_height = 1158 - 243;
+  const basic_width = 1680;
+
+  let window_height = window.innerHeight;
+  let window_width = window.innerWidth;
+
+  let cover_height;
+  let cover_width;
+
+  if (window_height / window_width > basic_height / basic_width) {
+    cover_width = window_width - 20;
+    cover_height = (cover_width * basic_height) / basic_width;
+  } else {
+    cover_height = window_height - 20;
+    cover_width = (cover_height * basic_width) / basic_height;
+  }
+
+  view.style.width = `${cover_width}px`;
+  view.style.height = `${cover_height}px`;
+  view.style.top = `${(window_height - cover_height) / 2}px`;
+  view.style.left = `${(window_width - cover_width) / 2}px`;
+}
