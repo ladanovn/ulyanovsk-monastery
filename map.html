@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width" />
   <title>Троице-стефано-ульяновский монастырь</title>
   <link rel="stylesheet" href="css/map.min.css" />
+  <link rel="stylesheet" href="vendor/simpleLight/simpleLightbox.min.css" />
 </head>
 
 <body>
@@ -55,10 +56,6 @@
           <source type="image/webp" srcset="./img/webp/map/shipsMonarchs.webp">
           <img src="./img/png/map/shipsMonarchs.png" class="decor__ship-monarchs" />
         </picture>
-        <picture>
-          <source type="image/webp" srcset="./img/webp/map/ship.webp">
-          <img src="./img/png/map/ship.png" class="decor__ship" />
-        </picture>
       </section>
 
       <nav class="nav cover__nav">
@@ -76,69 +73,83 @@
         </a>
       </nav>
 
-      <section class="buildings cover__buildings">
-        <a class="building__btn" tabindex="3">
+      <section class="elements cover__elements">
+        <a class="element__btn" tabindex="3">
           <picture>
-            <source type="image/webp" srcset="./img/webp/map/buildings/0.webp">
-            <img src="./img/png/map/buildings/0.png" class="building buildings__0" alt="объект №1" />
+            <source type="image/webp" srcset="./img/webp/map/elements/0.webp">
+            <img src="./img/png/map/elements/0.png" class="element elements__0" alt="объект №1" />
           </picture>
         </a>
-        <a class="building__btn" tabindex="4">
+        <a class="element__btn" tabindex="4">
           <picture>
-            <source type="image/webp" srcset="./img/webp/map/buildings/1.webp">
-            <img src="./img/png/map/buildings/1.png" class="building buildings__1" alt="объект №2" />
+            <source type="image/webp" srcset="./img/webp/map/elements/1.webp">
+            <img src="./img/png/map/elements/1.png" class="element elements__1" alt="объект №2" />
           </picture>
         </a>
-        <a class="building__btn" tabindex="5">
+        <a class="element__btn" tabindex="5">
           <picture>
-            <source type="image/webp" srcset="./img/webp/map/buildings/2.webp">
-            <img src="./img/png/map/buildings/2.png" class="building buildings__2" alt="объект №3" />
+            <source type="image/webp" srcset="./img/webp/map/elements/2.webp">
+            <img src="./img/png/map/elements/2.png" class="element elements__2" alt="объект №3" />
           </picture>
         </a>
-        <a class="building__btn" tabindex="6">
+        <a class="element__btn" tabindex="6">
           <picture>
-            <source type="image/webp" srcset="./img/webp/map/buildings/3.webp">
-            <img src="./img/png/map/buildings/3.png" class="building buildings__3" alt="объект №4" />
+            <source type="image/webp" srcset="./img/webp/map/elements/3.webp">
+            <img src="./img/png/map/elements/3.png" class="element elements__3" alt="объект №4" />
           </picture>
         </a>
-        <a class="building__btn" tabindex="7">
+        <a class="element__btn" tabindex="7">
           <picture>
-            <source type="image/webp" srcset="./img/webp/map/buildings/4.webp">
-            <img src="./img/png/map/buildings/4.png" class="building buildings__4" alt="объект №5" />
+            <source type="image/webp" srcset="./img/webp/map/elements/4.webp">
+            <img src="./img/png/map/elements/4.png" class="element elements__4" alt="объект №5" />
           </picture>
         </a>
-        <a class="building__btn" tabindex="8">
+        <a class="element__btn" tabindex="8">
           <picture>
-            <source type="image/webp" srcset="./img/webp/map/buildings/5.webp">
-            <img src="./img/png/map/buildings/5.png" class="building buildings__5" alt="объект №6" />
+            <source type="image/webp" srcset="./img/webp/map/elements/5.webp">
+            <img src="./img/png/map/elements/5.png" class="element elements__5" alt="объект №6" />
           </picture>
         </a>
-        <a class="building__btn" tabindex="9">
+        <a class="element__btn" tabindex="9">
           <picture>
-            <source type="image/webp" srcset="./img/webp/map/buildings/6.webp">
-            <img src="./img/png/map/buildings/6.png" class="building buildings__6" alt="объект №7" />
+            <source type="image/webp" srcset="./img/webp/map/elements/6.webp">
+            <img src="./img/png/map/elements/6.png" class="element elements__6" alt="объект №7" />
           </picture>
         </a>
-        <a class="building__btn" tabindex="10">
+        <a class="element__btn" tabindex="10">
           <picture>
-            <source type="image/webp" srcset="./img/webp/map/buildings/7.webp">
-            <img src="./img/png/map/buildings/7.png" class="building buildings__7" alt="объект №1" />
+            <source type="image/webp" srcset="./img/webp/map/elements/7.webp">
+            <img src="./img/png/map/elements/7.png" class="element elements__7" alt="объект №8" />
           </picture>
         </a>
-        <a class="building__btn" tabindex="11">
+        <a class="element__btn" tabindex="11">
           <picture>
-            <source type="image/webp" srcset="./img/webp/map/buildings/8.webp">
-            <img src="./img/png/map/buildings/8.png" class="building buildings__8" alt="объект №1" />
+            <source type="image/webp" srcset="./img/webp/map/elements/8.webp">
+            <img src="./img/png/map/elements/8.png" class="element elements__8" alt="объект №9" />
+          </picture>
+        </a>
+        <a class="element__btn" tabindex="12">
+          <picture>
+            <source type="image/webp" srcset="./img/webp/map/elements/9.webp">
+            <img src="./img/png/map/elements/9.png" class="element elements__9" alt="объект №10" />
           </picture>
         </a>
       </section>
 
       <section class="popup popup-right popup--close">
-        <div class="popup__build-info build-info"></div>
+        <div class="popup__build-info build-info">
+          <div class="content">
+            <div class="content__title"></div>
+            <div class="content__decor"></div>
+            <div class="content__gallery"> </div>
+            <div class="content__text"></div>
+          </div>
+        </div>
         <div class="popup__close close"></div>
       </section>
     </div>
   </main>
+  <script src="vendor/simpleLight/simpleLightbox.min.js"></script>
   <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
   <script src="js/map.min.js"></script>
 </body>
