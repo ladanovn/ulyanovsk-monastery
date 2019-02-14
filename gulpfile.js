@@ -7,6 +7,7 @@ const autoprefixer = require("autoprefixer");
 const babel = require('gulp-babel');
 const rename = require("gulp-rename");
 const minifyjs = require("gulp-js-minify");
+const minifyjson = require('gulp-json-minify');
 const imagemin = require("gulp-imagemin");
 const imageminPngquant = require('imagemin-pngquant');
 const webp = require('gulp-webp');
@@ -97,6 +98,14 @@ function html() {
     .pipe(browsersync.stream());
 }
 
+function json() {
+  return gulp
+    .src('./src/assets/**/*.json')
+    .pipe(minifyjson())
+    .pipe(gulp.dest('./dist/assets'))
+    .pipe(browsersync.stream());
+}
+
 function watchFiles() {
   gulp.watch("./src/scss/**/*", css);
   gulp.watch("./src/js/**/*", js);
@@ -104,7 +113,7 @@ function watchFiles() {
   gulp.watch("./src/img/**/*", img);
   gulp.watch("./src/**/*.html", html);
   gulp.watch("./src/", browserSyncReload);
-  // TODO: assets files
+  gulp.watch("./src/assets/**/*.json", json);
 }
 
 gulp.task("watch", gulp.parallel(watchFiles, browserSync))

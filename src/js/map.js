@@ -3,6 +3,9 @@ const cover = document.getElementsByClassName("cover")[0];
 const loader = document.getElementsByClassName("loader")[0];
 const popup = document.getElementsByClassName("popup")[0];
 const popupClose = document.getElementsByClassName("popup__close")[0];
+const popupTitle = document.getElementsByClassName("content__title")[0];
+const popupGalary = document.getElementsByClassName("content__galary")[0];
+const popupText = document.getElementsByClassName("content__text")[0];
 const ship = document.getElementsByClassName("elements__9")[0];
 
 const elementImg = document.getElementsByClassName("element");
@@ -10,8 +13,11 @@ const elementBtns = document.getElementsByClassName("element__btn");
 const allImgs = document.getElementsByTagName("img");
 
 let selectedElement = false;
+let elementsInfo = [];
 
-fetch('/assets/map/info.json').then(data => data.json().then(d => console.log(d)));
+fetch('/assets/map/info.json')
+  .then(data => data.json())
+  .then(json => elementsInfo = json.elements.slice());
 
 document.addEventListener("DOMContentLoaded", () => {
   imagesLoaded(view, () => {
@@ -102,6 +108,15 @@ document.addEventListener("DOMContentLoaded", () => {
       if (img !== this.children[0].children[1]) {
         img.style.filter = "hue-rotate(-70deg) grayscale(0.8)";
       } else {
+        const idReg = /\/([0-9]+).png/;
+        const id = Number(img.src.match(idReg)[1]);
+        const elemInfo = elementsInfo.find(el=> el.id === id);
+
+        if (elemInfo) {
+          popupTitle.innerHTML = elemInfo.title;
+          popupText.innerHTML = elemInfo.text;
+        }
+
         popup.classList.add(
           img.offsetLeft < view.offsetWidth / 2 ? "popup-right" : "popup-left"
         );
@@ -136,4 +151,5 @@ function resize(view) {
   view.style.height = `${cover_height}px`;
   view.style.top = `${(window_height - cover_height) / 2}px`;
   view.style.left = `${(window_width - cover_width) / 2}px`;
+  view.style.fontSize = `${cover_width / 1920 * 20}px`;
 }

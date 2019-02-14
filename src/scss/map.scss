@@ -1,4 +1,6 @@
 body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
     margin: 0px;
     background: #231f20;
 
@@ -270,6 +272,33 @@ body {
                 width: 45%;
                 top: 0px;
                 background: #290521e0;
+                overflow: auto;
+
+                .content {
+                    padding: 40% 10% 20% 15%;
+
+                    &__title {
+                        font-size: 1.5em;
+                        text-align: center;
+                        color: #fff;
+                    }
+
+                    &__decor {
+
+                    }
+
+                    &__galary {
+
+                    }
+
+                    &__text {
+                        color: #aaa;
+                        margin-top: 3em;
+                        font-size: 1.225em;
+                        line-height: 1.5em;
+                        text-indent: 1em;
+                    }
+                }
             }
 
             .close {
