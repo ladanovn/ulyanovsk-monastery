@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width" />
   <title>Троице-стефано-ульяновский монастырь</title>
   <link rel="stylesheet" href="css/map.min.css" />
+  <link rel="stylesheet" href="vendor/simpleLight/simpleLightbox.min.css"/>
 </head>
 
 <body>
@@ -140,14 +141,36 @@
           <div class="content">
             <div class="content__title"></div>
             <div class="content__decor"></div>
-            <div class="content__galary"></div>
+            <div class="content__galary">
+              <div class="galary__images">
+                <a href="./img/png/map/info/9/big/1.jpg" title="Афанасий Васильевич Булычев">
+                  <picture>
+                    <source type="image/webp" srcset="./img/webp/map/info/9/small/1.webp">
+                    <img src="./img/png/map/info/9/small/1.jpg"/>
+                  </picture>
+                </a>
+                <a href="./img/png/map/info/9/big/2.jpg" title="Пароход «Десятинный»">
+                  <picture>
+                    <source type="image/webp" srcset="./img/webp/map/info/9/small/2.webp">
+                    <img src="./img/png/map/info/9/small/2.jpg"/>
+                  </picture>
+                </a>
+                <a href="./img/png/map/info/9/big/2.jpg" title="Пароход «Десятинный»">
+                  <picture>
+                    <source type="image/webp" srcset="./img/webp/map/info/9/small/2.webp">
+                    <img src="./img/png/map/info/9/small/2.jpg"/>
+                  </picture>
+                </a>
+              </div>
+            </div>
             <div class="content__text"></div>
           </div>
         </div>
         <div class="popup__close close"></div>
-      </section>
+      </section>  
     </div>
   </main>
+  <script src="vendor/simpleLight/simpleLightbox.min.js"></script>
   <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
   <script src="js/map.min.js"></script>
 </body>

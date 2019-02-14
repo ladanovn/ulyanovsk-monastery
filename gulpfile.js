@@ -106,6 +106,14 @@ function json() {
     .pipe(browsersync.stream());
 }
 
+
+function vendorFiles() {
+  return gulp 
+    .src('./src/vendor/**/*')
+    .pipe(gulp.dest('./dist/vendor'))
+    .pipe(browsersync.stream());
+}
+
 function watchFiles() {
   gulp.watch("./src/scss/**/*", css);
   gulp.watch("./src/js/**/*", js);
@@ -114,6 +122,7 @@ function watchFiles() {
   gulp.watch("./src/**/*.html", html);
   gulp.watch("./src/", browserSyncReload);
   gulp.watch("./src/assets/**/*.json", json);
+  gulp.watch("./src/vendor/**/*", vendorFiles);
 }
 
 gulp.task("watch", gulp.parallel(watchFiles, browserSync))

@@ -275,9 +275,10 @@ body {
                 overflow: auto;
 
                 .content {
-                    padding: 40% 10% 20% 15%;
+                    padding: 40% 0 20%;
 
                     &__title {
+                        padding: 0 2em;
                         font-size: 1.65em;
                         text-align: center;
                         color: #fff;
@@ -292,10 +293,30 @@ body {
                     }
 
                     &__galary {
+                        height: 18em;
+                        overflow: hidden;
+                        background: #0000004f;
 
+                        .galary__images {
+                            display: flex;
+                            padding: 4em 3em;
+                            overflow: auto;
+
+                            a {
+                                box-shadow: 5em;
+                                margin-left: 1em;
+
+                                img {
+                                    height: 10em;
+                                    border-radius: .3em;
+                                }
+                            }
+                        }
                     }
 
                     &__text {
+                        margin-top: 2em;
+                        padding: 0 3em;
                         color: #aaa;
                         font-size: 1.225em;
                         line-height: 1.5em;

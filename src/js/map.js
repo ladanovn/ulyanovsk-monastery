@@ -15,6 +15,8 @@ const allImgs = document.getElementsByTagName("img");
 let selectedElement = false;
 let elementsInfo = [];
 
+new SimpleLightbox({elements: '.content__galary a'});
+
 fetch('/assets/map/info.json')
   .then(data => data.json())
   .then(json => elementsInfo = json.elements.slice());
