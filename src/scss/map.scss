@@ -271,20 +271,24 @@ body {
                 height: 100%;
                 width: 45%;
                 top: 0px;
-                background: #290521e0;
+                background: #290521e9;
                 overflow: auto;
 
                 .content {
                     padding: 40% 10% 20% 15%;
 
                     &__title {
-                        font-size: 1.5em;
+                        font-size: 1.65em;
                         text-align: center;
                         color: #fff;
                     }
 
                     &__decor {
-
+                        margin: .8em auto 2em;
+                        width: 70%;
+                        height: .125em;
+                        background: green;
+                        opacity: .8;
                     }
 
                     &__galary {
@@ -293,7 +297,6 @@ body {
 
                     &__text {
                         color: #aaa;
-                        margin-top: 3em;
                         font-size: 1.225em;
                         line-height: 1.5em;
                         text-indent: 1em;
