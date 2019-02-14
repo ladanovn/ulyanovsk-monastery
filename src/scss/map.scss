@@ -1,6 +1,6 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-    'Droid Sans', 'Helvetica Neue', sans-serif;
+        'Droid Sans', 'Helvetica Neue', sans-serif;
     margin: 0px;
     background: #231f20;
 
@@ -292,14 +292,14 @@ body {
                         opacity: .8;
                     }
 
-                    &__galary {
-                        height: 18em;
+                    &__gallery {
+                        height: 16em;
                         overflow: hidden;
                         background: #0000004f;
 
-                        .galary__images {
+                        .gallery__images {
                             display: flex;
-                            padding: 4em 3em;
+                            padding: 3em;
                             overflow: auto;
 
                             a {
@@ -309,7 +309,12 @@ body {
                                 img {
                                     height: 10em;
                                     border-radius: .3em;
+                                    box-shadow: 0 0 3em 0 #000;
                                 }
+                            }
+
+                            a:last-of-type {
+                                padding-right: 2em;
                             }
                         }
                     }
@@ -320,7 +325,8 @@ body {
                         color: #aaa;
                         font-size: 1.225em;
                         line-height: 1.5em;
-                        text-indent: 1em;
+                        text-indent: 2em;
+                        text-align: justify;
                     }
                 }
             }

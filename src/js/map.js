@@ -4,7 +4,7 @@ const loader = document.getElementsByClassName("loader")[0];
 const popup = document.getElementsByClassName("popup")[0];
 const popupClose = document.getElementsByClassName("popup__close")[0];
 const popupTitle = document.getElementsByClassName("content__title")[0];
-const popupGalary = document.getElementsByClassName("content__galary")[0];
+const popupGallery = document.getElementsByClassName("content__gallery")[0];
 const popupText = document.getElementsByClassName("content__text")[0];
 const ship = document.getElementsByClassName("elements__9")[0];
 
@@ -15,11 +15,9 @@ const allImgs = document.getElementsByTagName("img");
 let selectedElement = false;
 let elementsInfo = [];
 
-new SimpleLightbox({elements: '.content__galary a'});
-
-fetch('/assets/map/info.json')
+fetch("/assets/map/info.json")
   .then(data => data.json())
-  .then(json => elementsInfo = json.elements.slice());
+  .then(json => (elementsInfo = json.elements.slice()));
 
 document.addEventListener("DOMContentLoaded", () => {
   imagesLoaded(view, () => {
@@ -57,6 +55,10 @@ document.addEventListener("DOMContentLoaded", () => {
     view.style.background = "#f7d04e";
     popup.className = "popup popup--close";
 
+    popupTitle.innerHTML = "";
+    popupText.innerHTML = "";
+    popupGallery.innerHTML = "";
+
     Array.prototype.forEach.call(allImgs, img => {
       img.style.filter = "";
     });
@@ -69,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  window.onresize = function () {
+  window.onresize = function() {
     resize(view);
   };
 
@@ -112,11 +114,28 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         const idReg = /\/([0-9]+).png/;
         const id = Number(img.src.match(idReg)[1]);
-        const elemInfo = elementsInfo.find(el=> el.id === id);
+        const elemInfo = elementsInfo.find(el => el.id === id);
 
         if (elemInfo) {
           popupTitle.innerHTML = elemInfo.title;
           popupText.innerHTML = elemInfo.text;
+
+          // FIXME:
+          let gallery = `<div class="gallery__images">`;
+          elemInfo.imgs.forEach(info => {
+            gallery += `<a href="${info.big.src}" title="${info.title}">
+              <picture>
+                <source type="image/webp" srcset="${info.small.webp_src}">
+                <img src="${info.small.src}" />
+              </picture>
+            </a>`;
+          });
+          gallery += `</div>`;
+          popupGallery.innerHTML = gallery;
+
+          new SimpleLightbox({
+            elements: ".content__gallery a"
+          });
         }
 
         popup.classList.add(
@@ -153,5 +172,5 @@ function resize(view) {
   view.style.height = `${cover_height}px`;
   view.style.top = `${(window_height - cover_height) / 2}px`;
   view.style.left = `${(window_width - cover_width) / 2}px`;
-  view.style.fontSize = `${cover_width / 1920 * 20}px`;
+  view.style.fontSize = `${(cover_width / 1920) * 18}px`;
 }
