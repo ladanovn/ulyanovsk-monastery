@@ -11,6 +11,8 @@ const allImgs = document.getElementsByTagName("img");
 
 let selectedElement = false;
 
+fetch('/assets/map/info.json').then(data => data.json().then(d => console.log(d)));
+
 document.addEventListener("DOMContentLoaded", () => {
   imagesLoaded(view, () => {
     resize(view);

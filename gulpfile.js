@@ -104,6 +104,7 @@ function watchFiles() {
   gulp.watch("./src/img/**/*", img);
   gulp.watch("./src/**/*.html", html);
   gulp.watch("./src/", browserSyncReload);
+  // TODO: assets files
 }
 
 gulp.task("watch", gulp.parallel(watchFiles, browserSync))
