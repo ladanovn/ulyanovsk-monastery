@@ -10,12 +10,12 @@ const ship = document.getElementsByClassName("elements__9")[0];
 
 const elementImg = document.getElementsByClassName("element");
 const elementBtns = document.getElementsByClassName("element__btn");
-const allImgs = document.getElementsByTagName("img");
+const allImgs = document.querySelectorAll("img:not(.popup__img)");
 
 let selectedElement = false;
 let elementsInfo = [];
 
-fetch("/assets/map/info.json")
+fetch("./assets/map/info.json")
   .then(data => data.json())
   .then(json => (elementsInfo = json.elements.slice()));
 
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  window.onresize = function() {
+  window.onresize = function () {
     resize(view);
   };
 
@@ -120,18 +120,37 @@ document.addEventListener("DOMContentLoaded", () => {
           popupTitle.innerHTML = elemInfo.title;
           popupText.innerHTML = elemInfo.text;
 
-          // FIXME:
-          let gallery = `<div class="gallery__images">`;
-          elemInfo.imgs.forEach(info => {
-            gallery += `<a href="${info.big.src}" title="${info.title}">
-              <picture>
-                <source type="image/webp" srcset="${info.small.webp_src}">
-                <img src="${info.small.src}" />
-              </picture>
-            </a>`;
-          });
-          gallery += `</div>`;
-          popupGallery.innerHTML = gallery;
+          if (elemInfo.imgs) {
+            const gallery = document.createElement("div");
+            gallery.className = "gallery__images";
+
+            elemInfo.imgs.forEach(info => {
+              const imgLink = document.createElement("a");
+              const picture = document.createElement("picture");
+              const imgLoader = document.createElement("div");
+              const webpSrc = document.createElement("source");
+              const smallImage = new Image();
+
+              imgLink.setAttribute("href", info.big.src);
+              imgLink.setAttribute("title", info.title);
+              webpSrc.setAttribute("type", "image/webp");
+              webpSrc.setAttribute("srcset", info.small.webp_src);
+              imgLoader.className = "img__loading";
+
+              smallImage.src = info.small.src;
+              smallImage.onload = () => {
+                imgLoader.style.display = 'none';
+                smallImage.style.display = 'block';
+              }
+
+              gallery.appendChild(imgLink);
+              imgLink.appendChild(imgLoader);
+              imgLink.appendChild(picture);
+              picture.appendChild(webpSrc);
+              picture.appendChild(smallImage);
+            });
+            popupGallery.appendChild(gallery);
+          }
 
           new SimpleLightbox({
             elements: ".content__gallery a"
