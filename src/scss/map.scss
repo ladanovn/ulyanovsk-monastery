@@ -1,5 +1,5 @@
 body {
-  font-family: system-ui;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
   margin: 0px;
   background: #231f20;
 
@@ -45,6 +45,7 @@ body {
     }
 
     .background {
+
       &__vert-pattern,
       &__cloud,
       &__forest,
@@ -83,6 +84,7 @@ body {
     }
 
     .decor {
+
       &__cow,
       &__fishermen,
       &__monarchs,
@@ -127,6 +129,7 @@ body {
     }
 
     .elements {
+
       a:focus img,
       a:hover img {
         cursor: pointer;
@@ -201,6 +204,7 @@ body {
     }
 
     .nav {
+
       &__back,
       &__magnifier {
         position: absolute;

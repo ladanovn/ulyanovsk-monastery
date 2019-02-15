@@ -1,7 +1,7 @@
 body {
-    font-family: system-ui;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
     margin: 0px;
-    background: #231F20;
+    background: #231f20;
 
     .view {
         position: relative;
@@ -11,17 +11,17 @@ body {
         overflow: hidden;
         height: 100vh;
         border-radius: 10px;
-        transition: opacity .3s ease;
+        transition: opacity 0.3s ease;
 
         &__loader {
             position: relative;
             box-sizing: border-box;
             border: 16px solid #f7f7f7;
-            border-top: 16px solid #231F20;
+            border-top: 16px solid #231f20;
             border-radius: 50%;
             width: 15%;
-            animation: spin .6s linear infinite;
-            transition: .3s;
+            animation: spin 0.6s linear infinite;
+            transition: 0.3s;
             opacity: 1;
         }
 
@@ -32,7 +32,7 @@ body {
         }
 
         &__cover {
-            transition: .3s;
+            transition: 0.3s;
             opacity: 0;
         }
 
@@ -164,13 +164,13 @@ body {
             &__galary,
             &__about {
                 position: absolute;
-                transition: filter, transform .25s ease;
+                transition: filter, transform 0.25s ease;
                 filter: brightness(79%) sepia(60%) hue-rotate(0deg) saturate(280%);
             }
 
             &__map {
                 top: 10.6%;
-                width: 4.0%;
+                width: 4%;
                 left: 16.1%;
             }
 
@@ -201,7 +201,6 @@ body {
             }
         }
     }
-
 }
 
 @keyframes spin {
