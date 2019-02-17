@@ -53,7 +53,7 @@ body {
             }
 
             &__circle-pattern {
-                animation: spin 15s linear infinite;
+                animation: spin 25s linear infinite;
                 width: 26.3%;
                 top: 39.5%;
                 left: 53.3%;
@@ -89,7 +89,7 @@ body {
             }
 
             &__tail {
-                animation: peacock-wag 1s linear infinite;
+                animation: peacock-wag 2s linear infinite;
                 transform-origin: 100% 0;
                 width: 10.18%;
                 top: 62%;
@@ -129,7 +129,7 @@ body {
             }
 
             &__wind-bird-1 {
-                animation: title-bird-wag 1.5s linear infinite;
+                animation: title-bird-wag 2s linear infinite;
                 transform-origin: 100% 0;
                 width: 1.43%;
                 top: 21.5%;
