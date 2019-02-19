@@ -270,7 +270,7 @@ body {
         height: 100%;
         width: 45%;
         top: 0px;
-        background: #290521e9;
+        background: rgba(41, 5, 33, .96);
         overflow: auto;
 
         .content {
@@ -340,9 +340,9 @@ body {
           &__text {
             margin-top: 2em;
             padding: 0 3em;
-            color: #aaa;
-            font-size: 1.225em;
-            line-height: 1.4em;
+            color: #b6b6b6;
+            font-size: 1.3em;
+            line-height: 1.5em;
             text-indent: 2em;
             text-align: justify;
           }
