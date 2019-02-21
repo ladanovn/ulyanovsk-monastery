@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
           if (elemInfo.imgs) {
             const gallery = document.createElement("div");
             gallery.className = "gallery__images";
-
+            gallery.setAttribute('data-simplebar', 'data-simplebar')
             elemInfo.imgs.forEach(info => {
               const imgLink = document.createElement("a");
               const picture = document.createElement("picture");

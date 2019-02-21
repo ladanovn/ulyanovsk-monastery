@@ -293,11 +293,10 @@ body {
           }
 
           &__gallery {
-            max-height: 15.9em;
-            overflow: hidden;
+            width: 42em;
 
             .gallery__images {
-              display: flex;
+              height: 10em;
               padding: 3em;
               overflow: auto;
               background: #0000004f;
@@ -346,6 +345,15 @@ body {
             text-indent: 2em;
             text-align: justify;
           }
+
+          .simplebar-content {
+            display: flex !important;
+          }
+
+          .simplebar-track {
+            border-bottom: 1px solid #2b0924;
+          }
+
         }
       }
 
