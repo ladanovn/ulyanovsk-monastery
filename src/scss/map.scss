@@ -274,7 +274,15 @@ body {
         overflow: auto;
 
         .content {
-          padding: 40% 0 20%;
+          position: relative;
+          padding: 37% 0 20%;
+
+          &__sticky {
+            position: sticky;
+            transition: background .3 ease;
+            top: 0px;
+            padding-top: 3%;
+          }
 
           &__title {
             padding: 0 2em;

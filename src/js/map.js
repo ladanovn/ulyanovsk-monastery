@@ -2,7 +2,9 @@ const view = document.getElementsByClassName("view")[0];
 const cover = document.getElementsByClassName("cover")[0];
 const loader = document.getElementsByClassName("loader")[0];
 const popup = document.getElementsByClassName("popup")[0];
+const popupInfo = document.getElementsByClassName("popup__build-info")[0];
 const popupClose = document.getElementsByClassName("popup__close")[0];
+const popupStickyInfo = document.getElementsByClassName("content__sticky")[0];
 const popupTitle = document.getElementsByClassName("content__title")[0];
 const popupGallery = document.getElementsByClassName("content__gallery")[0];
 const popupText = document.getElementsByClassName("content__text")[0];
@@ -20,6 +22,17 @@ fetch("./assets/map/info.json")
   .then(json => (elementsInfo = json.elements.slice()));
 
 document.addEventListener("DOMContentLoaded", () => {
+  const simpleBar = new SimpleBar(popupInfo);
+  simpleBar.getScrollElement().addEventListener('scroll', () => {
+    const viewHeight = view.style.height.split('px')[0];
+    const offsetStickyInfo = popupStickyInfo.offsetTop;
+    if (offsetStickyInfo > viewHeight * 0.32) {
+      popupStickyInfo.style.background = '#2b0924';
+    } else {
+      popupStickyInfo.style.background = 'none';
+    }
+  });
+
   imagesLoaded(view, () => {
     resize(view);
     view.style.background = "#f7d04e";
