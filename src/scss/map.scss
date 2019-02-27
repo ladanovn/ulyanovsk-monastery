@@ -281,13 +281,14 @@ body {
             position: sticky;
             transition: background .3 ease;
             top: 0px;
-            padding-top: 3%;
+            padding-top: 3.5%;
           }
 
           &__title {
             padding: 0 2em;
             font-size: 1.65em;
             text-align: center;
+            text-transform: uppercase;
             color: #fff;
           }
 
