@@ -2,6 +2,7 @@ const view = document.getElementsByClassName("view")[0];
 const cover = document.getElementsByClassName("cover")[0];
 const loader = document.getElementsByClassName("loader")[0];
 const popup = document.getElementsByClassName("popup")[0];
+const popupBackground = document.getElementsByClassName("popup__background")[0];
 const popupInfo = document.getElementsByClassName("popup__build-info")[0];
 const popupClose = document.getElementsByClassName("popup__close")[0];
 const popupStickyInfo = document.getElementsByClassName("content__sticky")[0];
@@ -23,13 +24,13 @@ fetch("./assets/map/info.json")
 
 document.addEventListener("DOMContentLoaded", () => {
   const simpleBar = new SimpleBar(popupInfo);
-  simpleBar.getScrollElement().addEventListener('scroll', () => {
-    const viewHeight = view.style.height.split('px')[0];
+  simpleBar.getScrollElement().addEventListener("scroll", () => {
+    const viewHeight = view.style.height.split("px")[0];
     const offsetStickyInfo = popupStickyInfo.offsetTop;
     if (offsetStickyInfo > viewHeight * 0.32) {
-      popupStickyInfo.style.background = '#2b0924';
+      popupStickyInfo.style.background = "#2b0924";
     } else {
-      popupStickyInfo.style.background = 'none';
+      popupStickyInfo.style.background = "none";
     }
   });
 
@@ -85,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  window.onresize = function () {
+  window.onresize = function() {
     resize(view);
   };
 
@@ -121,6 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
     selectedElement = true;
     view.style.background = "#d0c4cc";
     popup.className = "popup popup--open";
+    popupBackground.className = "popup__background popup__background--open";
 
     Array.prototype.forEach.call(allImgs, img => {
       if (img !== this.children[0].children[1]) {
@@ -137,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
           if (elemInfo.imgs) {
             const gallery = document.createElement("div");
             gallery.className = "gallery__images";
-            gallery.setAttribute('data-simplebar', 'data-simplebar')
+            gallery.setAttribute("data-simplebar", "data-simplebar");
             elemInfo.imgs.forEach(info => {
               const imgLink = document.createElement("a");
               const picture = document.createElement("picture");
@@ -153,9 +155,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
               smallImage.src = info.small.src;
               smallImage.onload = () => {
-                imgLoader.style.display = 'none';
-                smallImage.style.display = 'block';
-              }
+                imgLoader.style.display = "none";
+                smallImage.style.display = "block";
+              };
 
               gallery.appendChild(imgLink);
               imgLink.appendChild(imgLoader);

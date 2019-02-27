@@ -235,6 +235,22 @@ body {
     .popup {
       transition: opacity 0.5s;
 
+      &__background {
+        position: absolute;
+        width: 45%;
+        bottom: 0%;
+        height: 100%;
+
+        &--open {
+          animation: popupAnimation .9s ease;
+          animation-fill-mode: forwards;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+
       &--open {
         animation: openPopup 0.5s ease;
         animation-fill-mode: forwards;
@@ -246,6 +262,10 @@ body {
       }
 
       &-left {
+        .popup__background {
+          left: 0px;
+        }
+
         .build-info {
           left: 0px;
         }
@@ -256,6 +276,10 @@ body {
       }
 
       &-right {
+        .popup__background {
+          right: 0px;
+        }
+
         .build-info {
           right: 0px;
         }
@@ -270,7 +294,7 @@ body {
         height: 100%;
         width: 45%;
         top: 0px;
-        background: rgba(41, 5, 33, .96);
+        // background: rgba(41, 5, 33, .96);
         overflow: auto;
 
         .content {
@@ -481,5 +505,15 @@ body {
   100% {
     display: block;
     opacity: 0;
+  }
+}
+
+@keyframes popupAnimation {
+  0% {
+    bottom: -25%;
+  }
+
+  100% {
+    bottom: 77%;
   }
 }
