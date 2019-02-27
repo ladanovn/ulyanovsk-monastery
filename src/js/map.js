@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   popupClose.addEventListener("click", () => {
+    simpleBar.getScrollElement().scrollTo(0, 0);
     selectedElement = false;
     view.style.background = "#f7d04e";
     popup.className = "popup popup--close";
