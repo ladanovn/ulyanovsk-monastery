@@ -108,7 +108,7 @@ function json() {
 
 
 function vendorFiles() {
-  return gulp 
+  return gulp
     .src('./src/vendor/**/*')
     .pipe(gulp.dest('./dist/vendor'))
     .pipe(browsersync.stream());
@@ -125,4 +125,4 @@ function watchFiles() {
   gulp.watch("./src/vendor/**/*", vendorFiles);
 }
 
-gulp.task("watch", gulp.parallel(watchFiles, browserSync))
+gulp.task("watch", gulp.parallel(watchFiles, browserSync));
