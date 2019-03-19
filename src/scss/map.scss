@@ -219,7 +219,7 @@ body {
 
       &__back {
         width: 4.9%;
-        top: 5%;
+        top: 7%;
         left: 19.6%;
       }
 
@@ -358,10 +358,12 @@ body {
                   height: 10em;
                   border-radius: 0.3em;
                   box-shadow: 0 0 3em 0 #000;
-                  transition: transform, box-shadow 0.6s easy;
+                  transition: transform, box-shadow 0.9s easy;
+                  filter: grayscale(1) brightness(0.9);
 
                   &:hover,
                   &:focus {
+                    filter: grayscale(0);
                     transform: scale(1.05, 1.05);
                     box-shadow: 0 0 5em 0 #000;
                   }
@@ -379,7 +381,7 @@ body {
             padding: 0 3em;
             color: #b6b6b6;
             font-size: 1.3em;
-            line-height: 1.5em;
+            line-height: 1.4em;
             text-indent: 2em;
             text-align: justify;
           }
