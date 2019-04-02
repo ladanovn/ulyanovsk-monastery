@@ -39,4 +39,5 @@ function resize(view) {
     view.style.height = `${cover_height}px`;
     view.style.top = `${(window_height - cover_height) / 2}px`;
     view.style.left = `${(window_width - cover_width) / 2}px`;
+    view.style.fontSize = `${(cover_width / 1920) * 18}px`;
 }
