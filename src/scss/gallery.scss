@@ -59,26 +59,33 @@ body {
         }
 
         .cover {
+
+            .scroll {
+                position: absolute;
+                top: 24%;
+                left: 27%;
+                width: 53%;
+                height: 79%;
+            }
+
             &__title {
                 position: absolute;
                 top: 9%;
                 font-size: 2.4em;
                 font-weight: 600;
-                left: 48%;
+                left: 47%;
             }
-            
+
             &__gallery {
-                position: absolute;
-                top: 27%;
-                left: 30%;
                 display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr;
-                grid-gap: 1em 4em;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-gap: 2em 0em;
+                margin-bottom: 10%;
 
                 a {
                     img {
-                        width: 8em;
-                        height: 8em;
+                        width: 17em;
+                        height: 21em;
                         border-radius: 1em;
                         background: #212121;
                     }

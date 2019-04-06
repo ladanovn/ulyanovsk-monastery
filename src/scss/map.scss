@@ -299,7 +299,6 @@ body {
         height: 100%;
         width: 45%;
         top: 0px;
-        // background: rgba(41, 5, 33, .96);
         overflow: auto;
 
         .content {
@@ -311,6 +310,7 @@ body {
             transition: background .3 ease;
             top: 0px;
             padding-top: 3.5%;
+            z-index: 2;
           }
 
           &__title {
@@ -415,6 +415,34 @@ body {
     white-space: normal !important;
     padding-top: 1em !important;
     background: #140310f0 !important;
+  }
+
+  .tooltip {
+    position: relative;
+    border-bottom: 1px dotted #aaa;
+  }
+
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    opacity: 0;
+    background-color: #1b0416;
+    color: #aaa;
+    width: 11em;
+    padding: 0.5em 1em;
+    border-radius: .4em;
+    position: absolute;
+    z-index: 3;
+    bottom: 1.6em;
+    left: -1em;
+    font-size: 1em;
+    text-transform: none;
+    text-indent: initial;
+    transition: .4s;
+  }
+
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
   }
 }
 
