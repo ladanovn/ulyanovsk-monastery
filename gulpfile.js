@@ -12,6 +12,7 @@ const imagemin = require("gulp-imagemin");
 const imageminPngquant = require('imagemin-pngquant');
 const webp = require('gulp-webp');
 const ghPages = require('gulp-gh-pages');
+const urlPrefixer = require('gulp-url-prefixer');
 
 function browserSync(done) {
   browsersync.init({
@@ -126,5 +127,25 @@ function watchFiles() {
   gulp.watch("./src/vendor/**/*", vendorFiles);
 }
 
+function cloneToGhPage() {
+  return gulp
+    .src('./src/**/*')
+    .pipe(gulp.dest('./gh-pages/'));
+}
+
+function addUrlPrefix() {
+  return gulp
+    .src('./src/**/*.html')
+    .pipe(urlPrefixer.html({
+      prefix: 'https://ladanovn.github.io/ulyanovsk-monastery/'
+    }))
+    .pipe(gulp.dest('./gh-pages/'));
+}
+
+function pushToGhPage() {
+  return  gulp.src('./gh-pages/**/*')
+    .pipe(ghPages());
+}
+
+gulp.task('deploy', gulp.series(cloneToGhPage, addUrlPrefix, pushToGhPage));
 gulp.task("watch", gulp.parallel(watchFiles, browserSync));
-// gulp.task('deploy', () => gulp.src('./dist/**/*').pipe(ghPages()));
