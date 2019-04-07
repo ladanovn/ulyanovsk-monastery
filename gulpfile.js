@@ -129,7 +129,7 @@ function watchFiles() {
 
 function cloneToGhPage() {
   return gulp
-    .src('./src/**/*')
+    .src('./dist/**/*')
     .pipe(gulp.dest('./gh-pages/'));
 }
 
