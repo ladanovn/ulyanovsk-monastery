@@ -138,7 +138,9 @@ function addUrlGhPagePrefix() {
   return gulp
     .src('./src/**/*.html')
     .pipe(urlPrefixer.html({
-      prefix: 'https://ladanovn.github.io/ulyanovsk-monastery/'
+      prefix: 'https://ladanovn.github.io/ulyanovsk-monastery/',
+      tags: ['source', 'script', 'link', 'a', 'img'],
+      attrs: ['href', 'src', 'srcset']
     }))
     .pipe(gulp.dest('./gh-pages/'));
 }
