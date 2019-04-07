@@ -1,0 +1,564 @@
+body {
+  font-family: 'Source Sans Pro';
+  margin: 0px;
+  background: #231f20;
+
+  img {
+    transition: filter 0.5s;
+  }
+
+  .view {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: background, opacity 0.5s ease;
+
+    &__loader {
+      position: relative;
+      box-sizing: border-box;
+      border: 16px solid #f7f7f7;
+      border-top: 16px solid #231f20;
+      border-radius: 50%;
+      width: 15%;
+      animation: spin 0.6s linear infinite;
+      transition: 0.3s;
+      opacity: 1;
+    }
+
+    &__loader:after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    &__cover {
+      transition: 0.3s;
+      opacity: 0;
+    }
+
+    .unactive {
+      filter: hue-rotate(-70deg) grayscale(0.8);
+    }
+
+    .background {
+
+      &__vert-pattern,
+      &__cloud,
+      &__forest,
+      &__trees {
+        position: absolute;
+      }
+
+      &__vert-pattern {
+        opacity: 0.439;
+        width: 15.36%;
+        top: -3%;
+        left: 14.5%;
+      }
+
+      &__cloud {
+        width: 66.6%;
+        top: 0px;
+        left: 5%;
+      }
+
+      &__forest {
+        width: 90.6%;
+        top: 20.8%;
+        left: 7.5%;
+      }
+    }
+
+    .monastery {
+      &__map {
+        position: absolute;
+        height: 101.9%;
+        width: 103.3%;
+        top: 4%;
+        left: 3%;
+      }
+    }
+
+    .decor {
+
+      &__monarchs,
+      &__pahari,
+      &__ship-monarchs {
+        position: absolute;
+      }
+
+      &__monarchs {
+        width: 5.22%;
+        top: 66%;
+        left: 52.9%;
+      }
+
+      &__pahari {
+        transition: 0.1s;
+        animation: movePahari 40s linear infinite;
+        width: 12.83%;
+        top: 66%;
+        left: 30%;
+      }
+
+      &__ship-monarchs {
+        width: 7.86%;
+        top: 87%;
+        left: 72%;
+      }
+    }
+
+    .elements {
+
+      a:focus img,
+      a:hover img {
+        cursor: pointer;
+        transform: scale(1.05, 1.05) translateY(-2%);
+      }
+
+      a img {
+        position: absolute;
+        transition: filter, transform 0.2s ease;
+      }
+
+      &__0 {
+        width: 8%;
+        top: 36.5%;
+        left: 25.2%;
+      }
+
+      &__1 {
+        left: 52.45%;
+        width: 5.9%;
+        top: 49.0%;
+      }
+
+      &__2 {
+        left: 58.2%;
+        width: 4.7%;
+        top: 51.3%;
+      }
+
+      &__3 {
+        left: 52%;
+        width: 5%;
+        top: 38%;
+      }
+
+      &__4 {
+        left: 45.5%;
+        width: 7.2%;
+        top: 3.3%;
+      }
+
+      &__5 {
+        left: 66.7%;
+        width: 8.1%;
+        top: 66.4%;
+      }
+
+      &__6 {
+        left: 58.9%;
+        width: 13.5%;
+        top: 19.2%;
+      }
+
+      &__7 {
+        left: 44.35%;
+        width: 8.5%;
+        top: 61.2%;
+      }
+
+      &__8 {
+        left: 85.7%;
+        width: 3.5%;
+        top: 44.2%;
+      }
+
+      &__9 {
+        transition: 0.1s;
+        width: 18.4%;
+        top: 84%;
+        left: 100%;
+      }
+
+      &__10 {
+        left: 43.3%;
+        width: 6.6%;
+        top: 48.1%;
+      }
+      
+      &__11 {
+        width: 9%;
+        top: 42%;
+        left: 76%;
+      }
+
+      &__12 {
+        transition: 0.1s;
+        animation: rockBoat 3s linear infinite alternate;
+        width: 7.6%;
+        top: 86%;
+        left: 37%;
+      }
+
+    }
+
+    .nav {
+
+      &__back,
+      &__magnifier {
+        position: absolute;
+        transition: filter, transform 0.25s ease;
+        filter: brightness(79%) sepia(60%) hue-rotate(0deg) saturate(280%);
+      }
+
+      &__back {
+        width: 4.9%;
+        top: 7%;
+        left: 19.6%;
+      }
+
+      &__magnifier {
+        width: 4.4%;
+        top: 15.9%;
+        left: 19.95%;
+      }
+
+      a:focus img,
+      a:hover img {
+        cursor: pointer;
+        transform: scale(1.1, 1.1);
+        filter: none;
+      }
+    }
+
+    .popup {
+      transition: opacity 0.5s;
+
+      &__background {
+        position: absolute;
+        width: 45%;
+        bottom: 0%;
+        height: 100%;
+
+        &--open {
+          animation: popupAnimation .9s ease;
+          animation-fill-mode: forwards;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+
+      &--open {
+        animation: openPopup 0.5s ease;
+        animation-fill-mode: forwards;
+      }
+
+      &--close {
+        display: none;
+        opacity: 0;
+      }
+
+      &-left {
+        .popup__background {
+          left: 0px;
+        }
+
+        .build-info {
+          left: 0px;
+        }
+
+        .close {
+          right: 0px;
+        }
+      }
+
+      &-right {
+        .popup__background {
+          right: 0px;
+        }
+
+        .build-info {
+          right: 0px;
+        }
+
+        .close {
+          left: 0px;
+        }
+      }
+
+      .build-info {
+        position: absolute;
+        height: 100%;
+        width: 45%;
+        top: 0px;
+        overflow: auto;
+
+        .content {
+          position: relative;
+          padding: 37% 0 20%;
+
+          &__sticky {
+            position: sticky;
+            transition: background .3 ease;
+            top: 0px;
+            padding-top: 3.5%;
+            z-index: 2;
+          }
+
+          &__title {
+            padding: 0 2em;
+            font-size: 1.65em;
+            text-align: center;
+            text-transform: uppercase;
+            color: #fff;
+          }
+
+          &__decor {
+            margin: 0.8em auto 2em;
+            text-align: center;
+
+            img {
+              width: 25em;
+            }
+          }
+
+          &__gallery {
+            width: 42em;
+
+            .gallery__images {
+              height: 10em;
+              padding: 3em;
+              overflow: auto;
+              background: #0000004f;
+
+              .img__loading {
+                margin: 4em 3em;
+                border: 0.2em solid #f7f7f7;
+                border-top-color: #231f20;
+                border-radius: 50%;
+                width: 3em;
+                height: 3em;
+                animation: spin 0.6s linear infinite;
+              }
+
+              a {
+                box-shadow: 5em;
+                margin-left: 1em;
+
+                img {
+                  display: none;
+                  height: 10em;
+                  border-radius: 0.3em;
+                  box-shadow: 0 0 3em 0 #000;
+                  transition: transform, box-shadow 0.9s easy;
+                  filter: grayscale(1) brightness(0.9);
+
+                  &:hover,
+                  &:focus {
+                    filter: grayscale(0);
+                    transform: scale(1.05, 1.05);
+                    box-shadow: 0 0 5em 0 #000;
+                  }
+                }
+              }
+
+              a:last-of-type {
+                padding-right: 2em;
+              }
+            }
+          }
+
+          &__text {
+            margin-top: 2em;
+            padding: 0 3em;
+            color: #b6b6b6;
+            font-size: 1.3em;
+            line-height: 1.4em;
+            text-indent: 2em;
+            text-align: justify;
+          }
+
+          .simplebar-content {
+            display: flex !important;
+          }
+
+          .simplebar-track {
+            border-bottom: 1px solid #2b0924;
+          }
+
+        }
+      }
+
+      .close {
+        position: absolute;
+        height: 100%;
+        width: 55%;
+        top: 0px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .slbCaption {
+    font-size: 1.1em !important;
+    display: block !important;
+    overflow: auto !important;
+    bottom: 1.5em !important;
+    white-space: normal !important;
+    padding-top: 1em !important;
+    background: #140310f0 !important;
+  }
+
+  .tooltip {
+    position: relative;
+    border-bottom: 1px dotted #aaa;
+  }
+
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    opacity: 0;
+    background-color: #1b0416;
+    color: #aaa;
+    width: 11em;
+    padding: 0.5em 1em;
+    border-radius: .4em;
+    position: absolute;
+    z-index: 3;
+    bottom: 1.6em;
+    left: -1em;
+    font-size: 1em;
+    text-transform: none;
+    text-indent: initial;
+    transition: .4s;
+  }
+
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rockBoat {
+  0% {
+    top: 84.5%;
+    left: 39%;
+  }
+
+  25% {
+    top: 85%;
+    left: 38.5%;
+  }
+
+  50% {
+    top: 85.5%;
+    left: 39%;
+  }
+
+  75% {
+    top: 85%;
+    left: 39.5%;
+  }
+
+  100% {
+    top: 84.5%;
+    left: 39%;
+  }
+}
+
+@keyframes moveShip {
+  0% {
+    left: 100%;
+  }
+
+  100% {
+    left: 72%;
+  }
+}
+
+@keyframes movePahari {
+  0% {
+    top: 66%;
+    left: 30%;
+    transform: scale(1, 1) rotate(0deg);
+  }
+
+  15% {
+    top: 66%;
+    left: 30%;
+    transform: scale(1, 1);
+  }
+
+  25% {
+    top: 78%;
+    left: 16%;
+    transform: scale(1, 1) rotate(0deg);
+  }
+
+  30% {
+    top: 78%;
+    left: 16%;
+    transform: scale(-1, 1) rotate(8deg);
+  }
+
+  85% {
+    top: 78%;
+    left: 16%;
+    transform: scale(-1, 1) rotate(8deg);
+  }
+
+  95% {
+    top: 66%;
+    left: 30%;
+    transform: scale(-1, 1) rotate(8deg);
+  }
+
+  100% {
+    transform: scale(1, 1) rotate(0deg);
+  }
+}
+
+@keyframes openPopup {
+  0% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes closePopup {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    display: block;
+    opacity: 0;
+  }
+}
+
+@keyframes popupAnimation {
+  0% {
+    bottom: -25%;
+  }
+
+  100% {
+    bottom: 77%;
+  }
+}
