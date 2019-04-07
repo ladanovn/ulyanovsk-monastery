@@ -13,7 +13,7 @@ const imageminPngquant = require('imagemin-pngquant');
 const webp = require('gulp-webp');
 const ghPages = require('gulp-gh-pages');
 const urlPrefixer = require('gulp-url-prefixer');
-const del = require('del');
+const clean = require('gulp-clean');
 
 function browserSync(done) {
   browsersync.init({
