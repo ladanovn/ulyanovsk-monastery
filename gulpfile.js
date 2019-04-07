@@ -13,6 +13,7 @@ const imageminPngquant = require('imagemin-pngquant');
 const webp = require('gulp-webp');
 const ghPages = require('gulp-gh-pages');
 const urlPrefixer = require('gulp-url-prefixer');
+const del = require('del');
 
 function browserSync(done) {
   browsersync.init({
@@ -133,7 +134,7 @@ function cloneToGhPage() {
     .pipe(gulp.dest('./gh-pages/'));
 }
 
-function addUrlPrefix() {
+function addUrlGhPagePrefix() {
   return gulp
     .src('./src/**/*.html')
     .pipe(urlPrefixer.html({
@@ -143,9 +144,16 @@ function addUrlPrefix() {
 }
 
 function pushToGhPage() {
-  return  gulp.src('./gh-pages/**/*')
+  return gulp.src('./gh-pages/**/*')
     .pipe(ghPages());
 }
 
-gulp.task('deploy', gulp.series(cloneToGhPage, addUrlPrefix, pushToGhPage));
+function clearTempFolders() {
+  return gulp.src('.publish', {
+      read: false
+    })
+    .pipe(clean());
+}
+
+gulp.task('deploy', gulp.series(cloneToGhPage, addUrlGhPagePrefix, pushToGhPage, clearTempFolders));
 gulp.task("watch", gulp.parallel(watchFiles, browserSync));
