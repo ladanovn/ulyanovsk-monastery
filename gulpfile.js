@@ -127,4 +127,4 @@ function watchFiles() {
 }
 
 gulp.task("watch", gulp.parallel(watchFiles, browserSync));
-gulp.task('deploy', () => gulp.src('./dist/**/*').pipe(ghPages()));
+// gulp.task('deploy', () => gulp.src('./dist/**/*').pipe(ghPages()));
