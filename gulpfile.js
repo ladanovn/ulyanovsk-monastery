@@ -11,6 +11,7 @@ const minifyjson = require('gulp-json-minify');
 const imagemin = require("gulp-imagemin");
 const imageminPngquant = require('imagemin-pngquant');
 const webp = require('gulp-webp');
+const ghPages = require('gulp-gh-pages');
 
 function browserSync(done) {
   browsersync.init({
@@ -126,3 +127,4 @@ function watchFiles() {
 }
 
 gulp.task("watch", gulp.parallel(watchFiles, browserSync));
+gulp.task('deploy', () => gulp.src('./dist/**/*').pipe(ghPages()));
