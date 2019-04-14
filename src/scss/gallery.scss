@@ -1,5 +1,5 @@
 body {
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
+    font-family: 'Source Sans Pro';
     margin: 0px;
     background: #231f20;
 
@@ -62,18 +62,10 @@ body {
 
             .scroll {
                 position: absolute;
-                top: 24%;
+                top: 20%;
                 left: 27%;
                 width: 53%;
                 height: 79%;
-            }
-
-            &__title {
-                position: absolute;
-                top: 9%;
-                font-size: 2.4em;
-                font-weight: 600;
-                left: 48%;
             }
 
             &__gallery {
@@ -83,17 +75,46 @@ body {
                 margin-bottom: 10%;
                 padding: 1em;
 
-                a {
-                    img {
-                        width: 17em;
-                        height: 21em;
-                        border-radius: .7em;
-                        background: #212121;
+                .gallery__item {
+                    position: relative;
+                    width: 17em;
+                    height: 23em;
+                    overflow: hidden;
+                    border-radius: .4em;
+                    transition: box-shadow .3s;
 
-                        &:hover {
-                            cursor: pointer;
-                            box-shadow: 0px 0px .5em .1em #aaa;
+                    &:hover,
+                    &:focus {
+                        cursor: pointer;
+                        box-shadow: 0.4em 0 1em 0 #310d2a;
+                    }
+
+                    .image {
+                        img {
+                            width: 17em;
+                            height: 23em;
                         }
+                    }
+
+                    .info {
+                        position: absolute;
+                        bottom: -45%;
+                        left: 0px;
+                        width: 100%;
+                        height: 45%;
+                        background: #310d2af0;
+                        transition: bottom .3s;
+
+                        .title {
+                            color: #fff;
+                            font-size: 1.3em;
+                            padding: 1.1em .9em;
+                        }
+                    }
+
+                    &:hover .info,
+                    &:focus .info{
+                        bottom: 0%;
                     }
                 }
             }
