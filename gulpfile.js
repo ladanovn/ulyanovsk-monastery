@@ -98,13 +98,7 @@ function html() {
   return gulp
     .src('./src/**/*.html')
     .pipe(gulp.dest('./dist'))
-    .pipe(browsersync.stream())    
-    .pipe(urlPrefixer.html({
-      prefix: '.',
-      tags: ['source', 'script', 'link', 'a', 'img'],
-      attrs: ['href', 'src', 'srcset']
-    }))
-    .pipe(gulp.dest('./dist/'));
+    .pipe(browsersync.stream())
 }
 
 function json() {

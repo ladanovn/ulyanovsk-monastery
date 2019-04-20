@@ -1,7 +1,6 @@
 const view = document.getElementsByClassName('view')[0];
 const cover = document.getElementsByClassName('cover')[0];
 const loader = document.getElementsByClassName('loader')[0];
-// const coverGallery = document.getElementsByClassName('scroll')[0];
 
 document.addEventListener("DOMContentLoaded", () => {
     imagesLoaded(view, () => {
@@ -10,13 +9,15 @@ document.addEventListener("DOMContentLoaded", () => {
         view.style.boxShadow = "0 0 100px 10px #0d0d0dde";
         cover.style.opacity = 1;
         loader.style.opacity = 0;
+
+        new SimpleLightbox({
+            elements: ".gallery a"
+        });
     });
 
     window.onresize = function () {
         resize(view);
     };
-
-    // new SimpleBar(coverGallery);
 });
 
 function resize(view) {

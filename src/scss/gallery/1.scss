@@ -40,6 +40,7 @@ body {
 
             &__back {
                 position: absolute;
+                z-index: 2;
                 transition: filter, transform 0.25s ease;
                 filter: brightness(79%) sepia(60%) hue-rotate(0deg) saturate(280%);
             }
@@ -60,6 +61,62 @@ body {
 
         .cover {
 
+            .header {
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                right: 0%;
+                display: flex;
+                justify-content: center;
+                padding-top: 3%;
+                padding-bottom: 2%;
+                box-shadow: 0 0 1em #333;
+                background: #d4b034;
+                z-index: 1;
+
+                .gallery {
+                    height: 19em;
+                    width: 50em;
+                    
+                    .simplebar-content {
+                        display: flex;
+                        justify-content: center;
+                        
+                        a {
+                            margin-left: 5em;
+
+                            img {
+                                height: 16.5em;
+                                margin: 1em 0;
+                                box-shadow: 0.3em 0.2em 0.3em 0px #333;
+                                border-radius: 0.5em;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .content {
+                position: absolute;
+                left: 28%;
+                right: 26%;
+                top: 42%;
+                background: rgba(255, 255, 255, 0.85);
+                border-radius: 0 0 0.5em 0.5em;
+                padding: 3em;            
+
+                .title {
+                    text-align: center;
+                    font-size: 2em;
+                }
+
+                .text {
+                    margin-top: 2em;
+                    font-size: 1.4em;
+                    line-height: 1.4em;
+                }
+            }
         }
     }
 }
