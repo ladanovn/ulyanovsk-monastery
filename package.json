@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "gulp watch",
-    "deploy": "gulp deploy"
+    "predeploy": "gulp predeploy"
   },
   "author": "",
   "license": "ISC",
