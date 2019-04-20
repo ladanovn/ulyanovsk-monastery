@@ -12,6 +12,7 @@ const imagemin = require("gulp-imagemin");
 const imageminPngquant = require('imagemin-pngquant');
 const webp = require('gulp-webp');
 const ghPages = require('gulp-gh-pages');
+const deploy = require('gulp-deploy-git');
 const urlPrefixer = require('gulp-url-prefixer');
 const clean = require('gulp-clean');
 
@@ -146,8 +147,11 @@ function addUrlGhPagePrefix() {
 }
 
 function pushToGhPage() {
-  return gulp.src('./gh-pages/**/*')
-    .pipe(ghPages());
+  return gulp.src('./gh-pages/**/*',  { read: false })
+    .pipe(deploy({
+      repository: "https://github.com/ladanovn/ulyanovsk-monastery.git",
+      branches: ['gh-pages']
+    }));
 }
 
 function clearTempFolders() {
@@ -157,5 +161,5 @@ function clearTempFolders() {
     .pipe(clean());
 }
 
-gulp.task('deploy', gulp.series(cloneToGhPage, addUrlGhPagePrefix, pushToGhPage, clearTempFolders));
+gulp.task('deploy', gulp.series(cloneToGhPage, addUrlGhPagePrefix, pushToGhPage));
 gulp.task("watch", gulp.parallel(watchFiles, browserSync));
