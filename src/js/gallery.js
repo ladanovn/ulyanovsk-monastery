@@ -1,7 +1,6 @@
 const view = document.getElementsByClassName('view')[0];
 const cover = document.getElementsByClassName('cover')[0];
 const loader = document.getElementsByClassName('loader')[0];
-const coverGallery = document.getElementsByClassName('scroll')[0];
 
 document.addEventListener("DOMContentLoaded", () => {
     imagesLoaded(view, () => {
@@ -15,8 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.onresize = function () {
         resize(view);
     };
-
-    new SimpleBar(coverGallery);
 });
 
 function resize(view) {

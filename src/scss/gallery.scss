@@ -62,37 +62,37 @@ body {
 
             .scroll {
                 position: absolute;
-                top: 20%;
-                left: 27%;
-                width: 53%;
+                top: 22%;
+                left: 21%;
+                width: 58%;
                 height: 79%;
             }
 
             &__gallery {
                 display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                grid-gap: 2em 0em;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                grid-gap: 4em 1em;
                 margin-bottom: 10%;
                 padding: 1em;
 
                 .gallery__item {
                     position: relative;
-                    width: 17em;
-                    height: 23em;
+                    width: 10.5em;
+                    height: 15em;
                     overflow: hidden;
-                    border-radius: .4em;
+                    border-radius: 5em 5em 0 0;
                     transition: box-shadow .3s;
 
                     &:hover,
                     &:focus {
                         cursor: pointer;
-                        box-shadow: 0.4em 0 1em 0 #310d2a;
+                        box-shadow: 0.4em 0 1em 0 #310d2af0;
                     }
 
                     .image {
                         img {
-                            width: 17em;
-                            height: 23em;
+                            width: 10.5em;
+                            height: 15em;
                             object-fit: cover;
                         }
                     }
@@ -108,7 +108,7 @@ body {
 
                         .title {
                             color: #fff;
-                            font-size: 1.3em;
+                            font-size: 1em;
                             padding: 1.1em .9em;
                         }
                     }
