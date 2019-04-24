@@ -303,7 +303,7 @@ body {
 
         .content {
           position: relative;
-          padding: 37% 0 20%;
+          padding: 20% 0 20%;
 
           &__sticky {
             position: sticky;
@@ -315,9 +315,10 @@ body {
 
           &__title {
             padding: 0 2em;
-            font-size: 1.65em;
+            font-size: 1.6em;
             text-align: center;
             text-transform: uppercase;
+            font-family: "RomulC";
             color: #fff;
           }
 
@@ -566,4 +567,9 @@ body {
   100% {
     bottom: 77%;
   }
+}
+
+@font-face {
+  font-family: RomulC;
+  src: url('./fonts/RomulC.otf');
 }
