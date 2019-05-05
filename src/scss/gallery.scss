@@ -62,7 +62,7 @@ body {
 
             .scroll {
                 position: absolute;
-                top: 22%;
+                top: 18%;
                 left: 21%;
                 width: 58%;
                 height: 79%;
@@ -71,17 +71,18 @@ body {
             &__gallery {
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-                grid-gap: 4em 1em;
-                margin-bottom: 10%;
+                grid-gap: 2.5em 1em;
+                margin-bottom: 8%;
                 padding: 1em;
 
                 .gallery__item {
                     position: relative;
-                    width: 10.5em;
-                    height: 15em;
+                    width: 10em;
+                    height: 13em;
                     overflow: hidden;
                     border-radius: 5em 5em 0 0;
                     transition: box-shadow .3s;
+                    margin: auto;
 
                     &:hover,
                     &:focus {
@@ -91,8 +92,8 @@ body {
 
                     .image {
                         img {
-                            width: 10.5em;
-                            height: 15em;
+                            width: 10em;
+                            height: 13em;
                             object-fit: cover;
                         }
                     }
@@ -108,7 +109,7 @@ body {
 
                         .title {
                             color: #fff;
-                            font-size: 1em;
+                            font-size: 0.95em;
                             padding: 1.1em .9em;
                         }
                     }
