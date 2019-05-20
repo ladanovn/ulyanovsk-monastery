@@ -76,7 +76,22 @@ body {
                 z-index: 1;
 
                 .gallery {
+                    position: absolute;
+                    top: 0px;
+                    left: 27em;
+                    width: 53em;
+                    height: 35.4em;
                     margin: 0 auto;
+
+                    .simplebar-content {
+                        display: flex;
+                        justify-content: center !important;
+                        margin: 0px !important;
+
+                        a {
+                            margin: 0px !important;
+                        }
+                    }
                 }
 
                 a {
@@ -84,8 +99,8 @@ body {
 
                     img {
                         position: relative;
-                        height: 26em;
-                        margin: 1em 3em;
+                        height: 27em;
+                        margin: 3.5em auto 0em;
                         box-shadow: 0.3em 0.2em 0.3em 0px #5a565670;
                         border-radius: .5em;
                         cursor: pointer;
@@ -95,7 +110,7 @@ body {
                 .points {
                     position: absolute;
                     display: flex;
-                    bottom: 2.3em;
+                    bottom: 2.0em;
 
                     div {
                         width: 0.7em;
@@ -103,6 +118,10 @@ body {
                         background: #5a565670;
                         border-radius: 50%;
                         margin: 0px .7em;
+
+                        &.active {
+                            background: #333 !important;
+                        }
                     }
                 }
             }
