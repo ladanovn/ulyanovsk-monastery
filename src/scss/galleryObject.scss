@@ -84,11 +84,25 @@ body {
 
                     img {
                         position: relative;
-                        height: 27em;
+                        height: 26em;
                         margin: 1em 3em;
                         box-shadow: 0.3em 0.2em 0.3em 0px #5a565670;
                         border-radius: .5em;
                         cursor: pointer;
+                    }
+                }
+
+                .points {
+                    position: absolute;
+                    display: flex;
+                    bottom: 2.3em;
+
+                    div {
+                        width: 0.7em;
+                        height: 0.7em;
+                        background: #5a565670;
+                        border-radius: 50%;
+                        margin: 0px .7em;
                     }
                 }
             }
