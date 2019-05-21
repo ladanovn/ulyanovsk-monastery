@@ -1,0 +1,92 @@
+body {
+    font-family: 'Source Sans Pro';
+    margin: 0px;
+    background: #231f20;
+
+    .view {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        height: 100vh;
+        border-radius: 10px;
+        transition: opacity 0.3s ease;
+
+        &__loader {
+            position: relative;
+            box-sizing: border-box;
+            border: 16px solid #f7f7f7;
+            border-top: 16px solid #231f20;
+            border-radius: 50%;
+            width: 15%;
+            animation: spin 0.6s linear infinite;
+            transition: 0.3s;
+            opacity: 1;
+        }
+
+        &__loader:after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+        }
+
+        &__cover {
+            transition: 0.3s;
+            opacity: 0;
+        }
+
+        .nav {
+
+            &__back {
+                position: absolute;
+                transition: filter, transform 0.25s ease;
+                filter: brightness(79%) sepia(60%) hue-rotate(0deg) saturate(280%);
+            }
+
+            &__back {
+                width: 4.9%;
+                top: 7%;
+                left: 19.6%;
+            }
+
+            a:focus img,
+            a:hover img {
+                cursor: pointer;
+                transform: scale(1.1, 1.1);
+                filter: none;
+            }
+        }
+
+        .cover {
+
+            .scroll {
+                position: absolute;
+                top: 11%;
+                left: 24%;
+                width: 51%;
+                height: 79%;
+                padding: 2em 4em;
+
+                .quote {
+                    line-height: 1.4em;
+                    margin: 0px -2em 4em 10em;
+                    font-size: 1.08em;
+                    font-style: italic;
+                    text-align: justify;
+
+                    .author {
+                        margin: 1em 0 0 4em;
+                    }
+                }
+
+                .content {
+                    text-align: justify;
+                    font-size: 1.3em;
+                    line-height: 1.5em;
+                    text-indent: 2em;
+                }
+            }
+        }
+    }
+}
