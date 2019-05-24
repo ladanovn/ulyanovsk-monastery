@@ -86,7 +86,115 @@ body {
                     font-size: 1.3em;
                     line-height: 1.5em;
                     text-indent: 2em;
+
+                    .gallery {
+                        margin-top: 1em;
+
+                        &__1 {
+                            width: 20em;
+                            float: right;
+
+                            .simplebar-wrapper {
+                                height: 26em;
+                                text-align: center;
+                            }
+
+                            picture {
+                                position: relative;
+
+                                img {
+                                    width: 16em;
+                                    border-radius: .3em;
+                                }
+    
+                                .points {
+                                    bottom: -1.5em;
+                                    right: 5em;
+                                }
+                            }
+                        }
+
+                        &__2 {
+                            .simplebar-wrapper {
+                                height: 27.5em;
+                                text-align: center;
+                            }
+
+                            picture {
+                                position: relative;
+                                
+                                img {
+                                    width: 35em;
+                                    border-radius: .3em;
+                                }
+
+                                .points {
+                                    bottom: -1.5em;
+                                    left: 14em;
+                                }
+                            }
+                        }
+
+                        &__3 {
+                            .simplebar-wrapper {
+                                height: 25em;
+                                text-align: center;
+                            }
+
+                            picture {
+                                position: relative;
+                            
+                                img {
+                                    width: 35em;
+                                    border-radius: .3em;
+                                }
+
+                                .points {
+                                    bottom: -1.5em;
+                                    left: 14em;
+                                }
+                            }
+                        }
+
+                        &__4 {
+                            .simplebar-wrapper {
+                                height: 31em;
+                                text-align: center;
+                            }
+
+                            picture {
+                                position: relative;
+                                
+                                img {
+                                    width: 35em;
+                                    border-radius: .3em;
+                                }
+
+                                .points {
+                                    bottom: -1.5em;
+                                    left: 14em;
+                                }
+                            }
+                        }
+                    }
                 }
+            }
+        }
+    }
+
+    .points {
+        position: absolute;
+        display: flex;
+
+        div {
+            width: 0.6em;
+            height: 0.6em;
+            background: #5a565670;
+            border-radius: 50%;
+            margin: 0px .6em;
+
+            &.active {
+                background: #333 !important;
             }
         }
     }

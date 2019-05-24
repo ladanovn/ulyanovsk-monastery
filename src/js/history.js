@@ -12,7 +12,19 @@ document.addEventListener("DOMContentLoaded", () => {
         loader.style.opacity = 0;
     });
 
-    const simpleBar = new SimpleBar(scroll);
+    new SimpleBar(scroll);
+    new SimpleLightbox({
+        elements: ".gallery__1 a"
+    });
+    new SimpleLightbox({
+        elements: ".gallery__2 a"
+    });
+    new SimpleLightbox({
+        elements: ".gallery__3 a"
+    });
+    new SimpleLightbox({
+        elements: ".gallery__4 a"
+    });
     window.onresize = function () {
         resize(view);
     };
