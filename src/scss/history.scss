@@ -90,6 +90,10 @@ body {
                     .gallery {
                         margin-top: 1em;
 
+                        img {
+                            filter: grayscale(1);
+                        }
+                        
                         &__1 {
                             width: 20em;
                             float: right;
